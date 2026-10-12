@@ -1,39 +1,238 @@
-let selectedCategory = "همه";
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بار و بندیل | فروشگاه اینترنتی</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #243047;
+    }
+
+    header {
+      background: linear-gradient(135deg, #172554, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      color: #dbeafe;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    .search-box:focus {
+      border-color: #2563eb;
+    }
+
+    #categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .category {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      color: #243047;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #00000010;
+    }
+
+    .category.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    #products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 15px #0000000d;
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #f8fafc;
+    }
+
+    .product h3 {
+      font-size: 17px;
+      margin: 15px 0 8px;
+    }
+
+    .product p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .product .price {
+      color: #15803d;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .empty {
+      text-align: center;
+      grid-column: 1 / -1;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>بار و بندیل 🛍️</h1>
+    <p>خریدی راحت، مطمئن و به‌صرفه</p>
+  </header>
+
+  <main class="container">
+
+    <input
+      type="search"
+      id="search"
+      class="search-box"
+      placeholder="🔎 دنبال چه محصولی می‌گردی؟"
+      aria-label="جست‌وجوی محصولات"
+    >
+
+    <div id="categories"></div>
+
+    <div id="products"></div>
+
+  </main>
+
+  <footer>
+    © بار و بندیل | تمامی حقوق محفوظ است.
+  </footer>
+
+  <script>
+    // دسته‌بندی محصولات
+    const categories = [
+      "پوشاک",
+      "لوازم خانه",
+      "لوازم دیجیتال",
+      "خوراکی",
+      "سایر محصولات"
+    ];
+
+    // محصولات فروشگاه
+    // برای اضافه کردن محصول، اطلاعاتش را به این لیست اضافه کن.
+    const products = [
+      /*
+      {
+        name: "نام محصول",
+        category: "پوشاک",
+        price: 250000,
+        image: "images/product.jpg"
+      }
+      */
+    ];
+
+    let selectedCategory = "همه";
+
     const categoriesBox = document.getElementById("categories");
     const productsBox = document.getElementById("products");
     const searchBox = document.getElementById("search");
 
     function renderCategories() {
       categoriesBox.replaceChildren();
+
       ["همه", ...categories].forEach(category => {
         const button = document.createElement("button");
-        button.className = "category" +
+
+        button.className =
+          "category" +
           (selectedCategory === category ? " active" : "");
+
         button.textContent = category;
+
         button.onclick = () => {
           selectedCategory = category;
           renderCategories();
           renderProducts();
         };
+
         categoriesBox.appendChild(button);
       });
     }
 
     function renderProducts() {
       productsBox.replaceChildren();
+
       const query = searchBox.value.trim().toLowerCase();
+
       const filtered = products.filter(product =>
         (selectedCategory === "همه" ||
-         product.category === selectedCategory) &&
-        (product.name.toLowerCase().includes(query))
+          product.category === selectedCategory) &&
+        product.name.toLowerCase().includes(query)
       );
 
       if (filtered.length === 0) {
         const message = document.createElement("p");
+
         message.className = "empty";
+
         message.textContent = products.length === 0
           ? "محصولات فروشگاه به‌زودی اضافه می‌شوند."
           : "محصولی با این مشخصات پیدا نشد.";
+
         productsBox.appendChild(message);
         return;
       }
@@ -44,10 +243,11 @@ let selectedCategory = "همه";
 
         if (product.image) {
           const img = document.createElement("img");
+
           img.src = product.image;
           img.alt = product.name;
-          img.style.width = "100%";
-          img.style.borderRadius = "10px";
+          img.loading = "lazy";
+
           card.appendChild(img);
         }
 
@@ -61,8 +261,11 @@ let selectedCategory = "همه";
 
         const price = document.createElement("p");
         price.className = "price";
-        price.textContent = Number(product.price).toLocaleString("fa-IR") +
+
+        price.textContent =
+          Number(product.price).toLocaleString("fa-IR") +
           " تومان";
+
         card.appendChild(price);
 
         productsBox.appendChild(card);
@@ -70,8 +273,10 @@ let selectedCategory = "همه";
     }
 
     searchBox.addEventListener("input", renderProducts);
+
     renderCategories();
     renderProducts();
   </script>
+
 </body>
-</html>
+      </html>
