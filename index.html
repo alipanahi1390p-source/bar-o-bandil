@@ -961,6 +961,37 @@ function restoreBackup() {
 
 renderSettings();
 renderProducts();
+/* تغییر رمز پنل مدیریت */
+function changeAdminPassword() {
+  const oldPassword = document.getElementById("oldAdminPassword").value;
+  const newPassword = document.getElementById("newAdminPassword").value;
+  const confirmPassword = document.getElementById("confirmAdminPassword").value;
+
+  const savedPassword = localStorage.getItem(PASSWORD_KEY) || "1234";
+
+  if (oldPassword !== savedPassword) {
+    alert("رمز فعلی اشتباه است!");
+    return;
+  }
+
+  if (newPassword.length < 4) {
+    alert("رمز جدید باید حداقل ۴ کاراکتر داشته باشد.");
+    return;
+  }
+
+  if (newPassword !== confirmPassword) {
+    alert("رمز جدید و تکرار آن یکسان نیستند!");
+    return;
+  }
+
+  localStorage.setItem(PASSWORD_KEY, newPassword);
+
+  document.getElementById("oldAdminPassword").value = "";
+  document.getElementById("newAdminPassword").value = "";
+  document.getElementById("confirmAdminPassword").value = "";
+
+  alert("رمز مدیریت با موفقیت تغییر کرد! 💚");
+}
 </script>
 
 </body>
