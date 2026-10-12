@@ -1,282 +1,965 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بار و بندیل | فروشگاه اینترنتی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>بار و بندیل | فروشگاه کیف</title>
 
-    body {
-      margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #f5f7fb;
-      color: #243047;
-    }
+<style>
+:root {
+  --jade: #075e45;
+  --jade-dark: #043d2e;
+  --jade-light: #e7f3ed;
+  --gold: #d4af37;
+  --gold-light: #f6e7a6;
+  --bg: #f7f8f4;
+  --white: #ffffff;
+  --text: #24332c;
+  --muted: #718078;
+  --danger: #c0392b;
+}
 
-    header {
-      background: linear-gradient(135deg, #172554, #2563eb);
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
-    }
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
 
-    header p {
-      margin: 0;
-      color: #dbeafe;
-    }
+button, input, textarea, select {
+  font: inherit;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
+button {
+  cursor: pointer;
+}
 
-    .search-box {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-      font-size: 16px;
-      margin-bottom: 20px;
-      outline: none;
-    }
+header {
+  background: linear-gradient(135deg, var(--jade-dark), var(--jade));
+  color: white;
+  padding: 25px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+}
 
-    .search-box:focus {
-      border-color: #2563eb;
-    }
+.brand-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 15px;
+  display: none;
+  margin: 0 auto 8px;
+}
 
-    #categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 25px;
-    }
+.brand-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--gold-light);
+  margin: 0;
+}
 
-    .category {
-      padding: 10px 18px;
-      border: none;
-      border-radius: 20px;
-      background: white;
-      color: #243047;
-      cursor: pointer;
-      box-shadow: 0 2px 8px #00000010;
-    }
+.tagline {
+  margin: 5px 0 0;
+  color: #e2eee8;
+}
 
-    .category.active {
-      background: #2563eb;
-      color: white;
-    }
+.container {
+  width: min(1100px, 100%);
+  margin: auto;
+  padding: 20px 15px;
+}
 
-    #products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-    }
+.welcome {
+  padding: 22px;
+  background: var(--white);
+  border-radius: 16px;
+  border-right: 5px solid var(--gold);
+  margin-bottom: 22px;
+}
 
-    .product {
-      background: white;
-      border-radius: 15px;
-      padding: 15px;
-      box-shadow: 0 4px 15px #0000000d;
-      transition: transform 0.2s;
-    }
+.welcome h2 {
+  margin-top: 0;
+  color: var(--jade);
+}
 
-    .product:hover {
-      transform: translateY(-4px);
-    }
+.search {
+  width: 100%;
+  border: 1px solid #d6dfd9;
+  border-radius: 12px;
+  padding: 13px 15px;
+  background: white;
+  margin-bottom: 20px;
+  outline: none;
+}
 
-    .product img {
-      width: 100%;
-      height: 180px;
-      object-fit: contain;
-      border-radius: 10px;
-      background: #f8fafc;
-    }
+.search:focus,
+.field:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px #d4af3725;
+}
 
-    .product h3 {
-      font-size: 17px;
-      margin: 15px 0 8px;
-    }
+.section-heading {
+  color: var(--jade-dark);
+  margin: 20px 0 12px;
+}
 
-    .product p {
-      color: #64748b;
-      font-size: 14px;
-    }
+#categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 25px;
+}
 
-    .product .price {
-      color: #15803d;
-      font-size: 17px;
-      font-weight: bold;
-    }
+.category {
+  background: white;
+  color: var(--jade);
+  border: 1px solid #cbd9d0;
+  border-radius: 22px;
+  padding: 8px 16px;
+}
 
-    .empty {
-      text-align: center;
-      grid-column: 1 / -1;
-      padding: 30px;
-      background: white;
-      border-radius: 12px;
-    }
+.category.active {
+  background: var(--jade);
+  color: white;
+  border-color: var(--gold);
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #64748b;
-      font-size: 13px;
-    }
-  </style>
+#products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.product {
+  min-width: 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e5e9e3;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0 4px 15px #163b2510;
+}
+
+.product img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f5f6f2;
+}
+
+.product h3 {
+  color: var(--jade-dark);
+  font-size: 17px;
+  margin: 10px 0 3px;
+}
+
+.product-description {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.product-category {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.price {
+  color: var(--jade);
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.stock {
+  font-size: 12px;
+  color: var(--jade);
+}
+
+.stock.out {
+  color: var(--danger);
+}
+
+.btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 14px;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #302600;
+}
+
+.btn-jade {
+  background: var(--jade);
+  color: white;
+}
+
+.btn-danger {
+  background: #fce8e6;
+  color: var(--danger);
+}
+
+.btn-whatsapp {
+  display: block;
+  width: 100%;
+  background: #16864a;
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.btn:disabled,
+.btn-whatsapp.disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.empty {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+
+.admin-launch {
+  text-align: center;
+  margin: 30px 0 10px;
+}
+
+.admin-panel {
+  display: none;
+  margin-top: 25px;
+  padding: 20px;
+  background: white;
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+}
+
+.admin-panel.open {
+  display: block;
+}
+
+.admin-panel h2,
+.admin-panel h3 {
+  color: var(--jade);
+}
+
+.admin-section {
+  border: 1px solid #e0e7e1;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.field {
+  width: 100%;
+  padding: 11px;
+  margin: 6px 0 12px;
+  border: 1px solid #d5ded7;
+  border-radius: 9px;
+  background: white;
+}
+
+textarea.field {
+  min-height: 90px;
+  resize: vertical;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf0ed;
+}
+
+.admin-product img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f5f6f2;
+}
+
+.admin-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-product-info small {
+  display: block;
+  color: var(--muted);
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.notice {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 35px;
+  color: #e3eee7;
+  background: var(--jade-dark);
+  border-top: 3px solid var(--gold);
+}
+
+footer strong {
+  color: var(--gold-light);
+}
+
+@media (max-width: 650px) {
+  #products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product {
+    padding: 9px;
+  }
+
+  .product img {
+    height: 145px;
+  }
+
+  .product h3 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .brand-name {
+    font-size: 25px;
+  }
+
+  .admin-product {
+    flex-wrap: wrap;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>بار و بندیل 🛍️</h1>
-    <p>خریدی راحت، مطمئن و به‌صرفه</p>
-  </header>
+<header>
+  <img id="brandLogo" class="brand-logo" alt="لوگوی بار و بندیل">
 
-  <main class="container">
+  <h1 class="brand-name" id="brandName">بار و بندیل</h1>
 
-    <input
-      type="search"
-      id="search"
-      class="search-box"
-      placeholder="🔎 دنبال چه محصولی می‌گردی؟"
-      aria-label="جست‌وجوی محصولات"
-    >
+  <p class="tagline" id="tagline">
+    همراه شما برای یک خرید دلنشین 💚
+  </p>
+</header>
 
-    <div id="categories"></div>
+<main class="container">
 
-    <div id="products"></div>
+  <section class="welcome">
+    <h2 id="welcomeTitle">به بار و بندیل خوش اومدی 💚</h2>
+    <p id="welcomeText">
+      محصولات مورد علاقه‌ات رو پیدا کن و برای سفارش از طریق واتساپ پیام بده.
+    </p>
+  </section>
 
-  </main>
+  <input
+    id="search"
+    class="search"
+    type="search"
+    placeholder="🔎 جست‌وجوی محصول..."
+    aria-label="جست‌وجوی محصولات"
+  >
 
-  <footer>
-    © بار و بندیل | تمامی حقوق محفوظ است.
-  </footer>
+  <h2 class="section-heading">دسته‌بندی محصولات</h2>
+  <div id="categories"></div>
 
-  <script>
-    // دسته‌بندی محصولات
-    const categories = [
-      "پوشاک",
-      "لوازم خانه",
-      "لوازم دیجیتال",
-      "خوراکی",
-      "سایر محصولات"
-    ];
+  <h2 class="section-heading">محصولات فروشگاه</h2>
+  <div id="products"></div>
 
-    // محصولات فروشگاه
-    // برای اضافه کردن محصول، اطلاعاتش را به این لیست اضافه کن.
-    const products = [
-      /*
-      {
-        name: "نام محصول",
-        category: "پوشاک",
-        price: 250000,
-        image: "images/product.jpg"
-      }
-      */
-    ];
+  <div class="admin-launch">
+    <button class="btn btn-gold" id="adminOpen">
+      ⚙️ مدیریت فروشگاه
+    </button>
+  </div>
 
-    let selectedCategory = "همه";
+  <section class="admin-panel" id="adminPanel">
 
-    const categoriesBox = document.getElementById("categories");
-    const productsBox = document.getElementById("products");
-    const searchBox = document.getElementById("search");
+    <h2>پنل مدیریت بار و بندیل 💚</h2>
 
-    function renderCategories() {
-      categoriesBox.replaceChildren();
+    <p class="notice">
+      اطلاعات این نسخه در مرورگر همین دستگاه ذخیره می‌شود.
+    </p>
 
-      ["همه", ...categories].forEach(category => {
-        const button = document.createElement("button");
+    <div id="loginArea">
+      <label for="adminPassword">رمز مدیریت</label>
 
-        button.className =
-          "category" +
-          (selectedCategory === category ? " active" : "");
+      <input
+        id="adminPassword"
+        class="field"
+        type="password"
+        placeholder="رمز مدیریت را وارد کن"
+        autocomplete="current-password"
+      >
 
-        button.textContent = category;
+      <button class="btn btn-jade" id="loginButton">
+        ورود به مدیریت
+      </button>
 
-        button.onclick = () => {
-          selectedCategory = category;
-          renderCategories();
-          renderProducts();
-        };
+      <p class="notice">
+        رمز اولیه این نمونه: 1234
+      </p>
+    </div>
 
-        categoriesBox.appendChild(button);
-      });
+    <div id="adminContent" hidden>
+
+      <button class="btn btn-danger" id="logoutButton">
+        خروج از پنل مدیریت
+      </button>
+
+      <div class="admin-section">
+        <h3>🎨 تنظیمات فروشگاه</h3>
+
+        <label for="settingName">نام فروشگاه</label>
+        <input id="settingName" class="field" maxlength="80">
+
+        <label for="settingTagline">شعار فروشگاه</label>
+        <input id="settingTagline" class="field" maxlength="160">
+
+        <label for="settingWelcomeTitle">عنوان صفحه اصلی</label>
+        <input id="settingWelcomeTitle" class="field" maxlength="120">
+
+        <label for="settingWelcomeText">متن خوشامدگویی</label>
+        <textarea id="settingWelcomeText" class="field" maxlength="500"></textarea>
+
+        <label for="settingLogo">انتخاب لوگو از گوشی</label>
+        <input
+          id="settingLogo"
+          class="field"
+          type="file"
+          accept="image/*"
+        >
+
+        <button class="btn btn-danger" id="removeLogo">
+          حذف لوگو
+        </button>
+
+        <p class="notice">
+          برای ذخیره مطمئن‌تر، تصویر لوگو را کوچک انتخاب کن.
+        </p>
+
+        <label for="settingWhatsapp">شماره واتساپ</label>
+        <input
+          id="settingWhatsapp"
+          class="field"
+          type="tel"
+          placeholder="مثلاً 989121234567"
+          inputmode="tel"
+        >
+
+        <label for="settingPassword">رمز جدید مدیریت</label>
+        <input
+          id="settingPassword"
+          class="field"
+          type="password"
+          minlength="4"
+          maxlength="64"
+          placeholder="اگر نمی‌خواهی عوض شود، خالی بگذار"
+          autocomplete="new-password"
+        >
+
+        <button class="btn btn-jade" id="saveSettings">
+          ذخیره تنظیمات
+        </button>
+      </div>
+
+      <div class="admin-section">
+        <h3>📂 مدیریت دسته‌بندی‌ها</h3>
+
+        <label for="newCategory">نام دسته‌بندی جدید</label>
+        <input
+          id="newCategory"
+          class="field"
+          maxlength="60"
+          placeholder="مثلاً کیف چرمی"
+        >
+
+        <button class="btn btn-gold" id="addCategory">
+          افزودن دسته‌بندی
+        </button>
+
+        <div id="categoryManagement"></div>
+      </div>
+
+      <div class="admin-section">
+        <h3 id="productFormTitle">👜 افزودن محصول جدید</h3>
+
+        <form id="productForm">
+
+          <input type="hidden" id="editProductId">
+
+          <label for="productName">نام محصول</label>
+          <input
+            id="productName"
+            class="field"
+            required
+            maxlength="120"
+            placeholder="مثلاً کیف دستی"
+          >
+
+          <label for="productCategory">دسته‌بندی</label>
+          <select id="productCategory" class="field" required></select>
+
+          <label for="productPrice">قیمت به تومان</label>
+          <input
+            id="productPrice"
+            class="field"
+            type="number"
+            min="0"
+            max="999999999999"
+            step="1"
+            required
+            placeholder="مثلاً 450000"
+          >
+
+          <label for="productStock">تعداد موجودی</label>
+          <input
+            id="productStock"
+            class="field"
+            type="number"
+            min="0"
+            max="999999"
+            step="1"
+            value="1"
+            required
+          >
+
+          <label for="productDescription">توضیحات</label>
+          <textarea
+            id="productDescription"
+            class="field"
+            maxlength="2000"
+            placeholder="توضیحات محصول..."
+          ></textarea>
+
+          <label for="productImage">عکس محصول</label>
+          <input
+            id="productImage"
+            class="field"
+            type="file"
+            accept="image/*"
+          >
+
+          <p class="notice" id="imageHint">
+            برای محصول جدید، یک عکس انتخاب کن.
+          </p>
+
+          <button class="btn btn-jade" type="submit">
+            ذخیره محصول
+          </button>
+
+          <button
+            class="btn btn-danger"
+            type="button"
+            id="cancelEdit"
+            hidden
+          >
+            لغو ویرایش
+          </button>
+        </form>
+      </div>
+
+      <div class="admin-section">
+        <h3>📦 محصولات ثبت‌شده</h3>
+        <div id="adminProducts"></div>
+      </div>
+
+      <div class="admin-section">
+        <h3>💾 پشتیبان اطلاعات فروشگاه</h3>
+
+        <p class="notice">
+          یک نسخه پشتیبان دانلود کن تا در صورت پاک شدن اطلاعات مرورگر،
+          بتوانی اطلاعات را بازیابی کنی.
+        </p>
+
+        <button class="btn btn-jade" id="exportData">
+          دانلود نسخه پشتیبان
+        </button>
+
+        <label for="importData">بازیابی نسخه پشتیبان</label>
+        <input
+          id="importData"
+          class="field"
+          type="file"
+          accept=".json,application/json"
+        >
+
+        <button class="btn btn-gold" id="importButton">
+          بازیابی اطلاعات
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong id="footerName">بار و بندیل</strong>
+  <p>انتخابی دلنشین، خریدی آسان 💚</p>
+</footer>
+
+<script>
+"use strict";
+
+/*
+  نسخه اولیه فروشگاه بار و بندیل
+  ذخیره‌سازی: مرورگر همین دستگاه
+*/
+
+const STORAGE_KEY = "barobandil_store_v1";
+const PASSWORD_KEY = "barobandil_admin_password_v1";
+
+const DEFAULT_CATEGORIES = [
+  "کیف زنانه",
+  "کیف مردانه",
+  "کوله‌پشتی",
+  "کیف پول",
+  "کیف مدرسه",
+  "کیف اداری",
+  "سایر محصولات"
+];
+
+const DEFAULT_SETTINGS = {
+  name: "بار و بندیل",
+  tagline: "همراه شما برای یک خرید دلنشین 💚",
+  welcomeTitle: "به بار و بندیل خوش اومدی 💚",
+  welcomeText:
+    "محصولات مورد علاقه‌ات رو پیدا کن و برای سفارش از طریق واتساپ پیام بده.",
+  whatsapp: "",
+  logo: ""
+};
+
+let store = loadStore();
+let selectedCategory = "همه";
+let editingImage = "";
+let isAdmin = false;
+
+const $ = id => document.getElementById(id);
+
+function loadStore() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if (saved) {
+      const data = JSON.parse(saved);
+
+      return {
+        settings: {
+          ...DEFAULT_SETTINGS,
+          ...(data.settings || {})
+        },
+        categories: Array.isArray(data.categories)
+          ? data.categories.filter(
+              c => typeof c === "string" && c.trim()
+            )
+          : [...DEFAULT_CATEGORIES],
+        products: Array.isArray(data.products)
+          ? data.products
+          : []
+      };
+    }
+  } catch (error) {
+    console.error("خطا در خواندن اطلاعات:", error);
+  }
+
+  return {
+    settings: { ...DEFAULT_SETTINGS },
+    categories: [...DEFAULT_CATEGORIES],
+    products: []
+  };
+}
+
+function saveStore() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    return true;
+  } catch (error) {
+    alert(
+      "ذخیره اطلاعات انجام نشد. احتمالاً فضای مرورگر پر شده است. " +
+      "حجم عکس‌ها را کمتر کن یا عکس کوچک‌تری انتخاب کن."
+    );
+
+    return false;
+  }
+}
+
+function formatPrice(price) {
+  return Number(price).toLocaleString("fa-IR") + " تومان";
+}
+
+function normalizePhone(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
+function safeImage(image) {
+  return typeof image === "string" &&
+    image.startsWith("data:image/") &&
+    image.length < 1800000
+      ? image
+      : "";
+}
+
+function makeId() {
+  return Date.now().toString(36) +
+    Math.random().toString(36).slice(2, 8);
+}
+
+function renderSettings() {
+  $("brandName").textContent = store.settings.name;
+  $("tagline").textContent = store.settings.tagline;
+  $("welcomeTitle").textContent = store.settings.welcomeTitle;
+  $("welcomeText").textContent = store.settings.welcomeText;
+  $("footerName").textContent = store.settings.name;
+
+  const logo = $("brandLogo");
+  const image = safeImage(store.settings.logo);
+
+  if (image) {
+    logo.src = image;
+    logo.style.display = "block";
+  } else {
+    logo.removeAttribute("src");
+    logo.style.display = "none";
+  }
+
+  document.title = store.settings.name + " | فروشگاه";
+
+  $("settingName").value = store.settings.name;
+  $("settingTagline").value = store.settings.tagline;
+  $("settingWelcomeTitle").value = store.settings.welcomeTitle;
+  $("settingWelcomeText").value = store.settings.welcomeText;
+  $("settingWhatsapp").value = store.settings.whatsapp;
+}
+
+function renderCategories() {
+  const box = $("categories");
+  box.replaceChildren();
+
+  ["همه", ...store.categories].forEach(category => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className =
+      "category" +
+      (selectedCategory === category ? " active" : "");
+
+    button.textContent = category;
+
+    button.onclick = () => {
+      selectedCategory = category;
+      renderCategories();
+      renderProducts();
+    };
+
+    box.appendChild(button);
+  });
+
+  const select = $("productCategory");
+  const previous = select.value;
+
+  select.replaceChildren();
+
+  store.categories.forEach(category => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.textContent = category;
+    select.appendChild(option);
+  });
+
+  if (store.categories.includes(previous)) {
+    select.value = previous;
+  }
+
+  renderCategoryManagement();
+}
+
+function renderProducts() {
+  const box = $("products");
+  box.replaceChildren();
+
+  const query = $("search").value.trim().toLocaleLowerCase("fa");
+
+  const filtered = store.products.filter(product => {
+    const matchesCategory =
+      selectedCategory === "همه" ||
+      product.category === selectedCategory;
+
+    const searchable = [
+      product.name,
+      product.category,
+      product.description
+    ].join(" ").toLocaleLowerCase("fa");
+
+    return matchesCategory && searchable.includes(query);
+  });
+
+  if (filtered.length === 0) {
+    const message = document.createElement("div");
+    message.className = "empty";
+
+    message.textContent = store.products.length === 0
+      ? "محصولات فروشگاه به‌زودی اضافه می‌شوند 💚"
+      : "محصولی با این مشخصات پیدا نشد.";
+
+    box.appendChild(message);
+    return;
+  }
+
+  filtered.forEach(product => {
+    const card = document.createElement("article");
+    card.className = "product";
+
+    const image = document.createElement("img");
+    image.alt = product.name;
+    image.loading = "lazy";
+
+    if (safeImage(product.image)) {
+      image.src = product.image;
+    } else {
+      image.alt = "تصویر برای این محصول ثبت نشده است";
+      image.style.display = "none";
     }
 
-    function renderProducts() {
-      productsBox.replaceChildren();
+    card.appendChild(image);
 
-      const query = searchBox.value.trim().toLowerCase();
+    const name = document.createElement("h3");
+    name.textContent = product.name;
+    card.appendChild(name);
 
-      const filtered = products.filter(product =>
-        (selectedCategory === "همه" ||
-          product.category === selectedCategory) &&
-        product.name.toLowerCase().includes(query)
-      );
+    const category = document.createElement("div");
+    category.className = "product-category";
+    category.textContent = product.category;
+    card.appendChild(category);
 
-      if (filtered.length === 0) {
-        const message = document.createElement("p");
+    if (product.description) {
+      const description = document.createElement("p");
+      description.className = "product-description";
+      description.textContent = product.description;
+      card.appendChild(description);
+    }
 
-        message.className = "empty";
+    const price = document.createElement("p");
+    price.className = "price";
+    price.textContent = formatPrice(product.price);
+    card.appendChild(price);
 
-        message.textContent = products.length === 0
-          ? "محصولات فروشگاه به‌زودی اضافه می‌شوند."
-          : "محصولی با این مشخصات پیدا نشد.";
+    const stock = document.createElement("p");
+    stock.className = "stock" + (
+      Number(product.stock) > 0 ? "" : " out"
+    );
 
-        productsBox.appendChild(message);
-        return;
-      }
+    stock.textContent = Number(product.stock) > 0
+      ? "موجود"
+      : "ناموجود";
 
-      filtered.forEach(product => {
-        const card = document.createElement("article");
-        card.className = "product";
+    card.appendChild(stock);
 
-        if (product.image) {
-          const img = document.createElement("img");
+    const link = document.createElement("a");
+    link.className = "btn-whatsapp";
 
-          img.src = product.image;
-          img.alt = product.name;
-          img.loading = "lazy";
+    const phone = normalizePhone(store.settings.whatsapp);
 
-          card.appendChild(img);
+    link.textContent = phone
+      ? "سفارش از واتساپ"
+      : "شماره واتساپ هنوز ثبت نشده";
+
+    if (phone && Number(product.stock) > 0) {
+      const message =
+        "سلام، برای سفارش این محصول از فروشگاه " +
+        store.settings.name +
+        " پیام می‌دم.\n" +
+        "محصول: " + product.name + "\n" +
+        "قیمت: " + formatPrice(product.price);
+
+      link.href =
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(message);
+
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    } else {
+      link.href = "#";
+      link.classList.add("disabled");
+
+      link.onclick = event => {
+        event.preventDefault();
+
+        if (!phone) {
+          alert("مدیر فروشگاه هنوز شماره واتساپ را ثبت نکرده است.");
+        } else {
+          alert("این محصول در حال حاضر ناموجود است.");
         }
-
-        const name = document.createElement("h3");
-        name.textContent = product.name;
-        card.appendChild(name);
-
-        const category = document.createElement("p");
-        category.textContent = product.category;
-        card.appendChild(category);
-
-        const price = document.createElement("p");
-        price.className = "price";
-
-        price.textContent =
-          Number(product.price).toLocaleString("fa-IR") +
-          " تومان";
-
-        card.appendChild(price);
-
-        productsBox.appendChild(card);
-      });
+      };
     }
 
-    searchBox.addEventListener("input", renderProducts);
+    card.appendChild(link);
+    box.appendChild(card);
+  });
+}
 
-    renderCategories();
-    renderProducts();
-  </script>
+function renderCategoryManagement() {
+  const box = $("categoryManagement");
+  if (!box) return;
 
-</body>
-      </html>
+  box.replaceChildren();
+
+  store.categories.forEach(category => {
+    const row = document.createElement("div");
+    row.className = "admin-product";
+
+    const name = document.createElement("div");
+    name.className = "admin-product-info";
+    name.textContent = category;
+
+    const actions = document.createElement("div");
+    actions.className = "admin-actions";
+
+    const rename = document.createElement("button");
+    rename.className = "btn btn-gold";
+    rename.textContent = "تغییر نام";
+
+    rename.onclick = () => {
+      const newName = prompt("نام جدید دسته‌بندی:", category);
+
+      if (newName === null) return;
+
+      const cleanName = newName.trim();
+
+ 
