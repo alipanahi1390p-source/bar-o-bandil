@@ -1,0 +1,77 @@
+let selectedCategory = "همه";
+    const categoriesBox = document.getElementById("categories");
+    const productsBox = document.getElementById("products");
+    const searchBox = document.getElementById("search");
+
+    function renderCategories() {
+      categoriesBox.replaceChildren();
+      ["همه", ...categories].forEach(category => {
+        const button = document.createElement("button");
+        button.className = "category" +
+          (selectedCategory === category ? " active" : "");
+        button.textContent = category;
+        button.onclick = () => {
+          selectedCategory = category;
+          renderCategories();
+          renderProducts();
+        };
+        categoriesBox.appendChild(button);
+      });
+    }
+
+    function renderProducts() {
+      productsBox.replaceChildren();
+      const query = searchBox.value.trim().toLowerCase();
+      const filtered = products.filter(product =>
+        (selectedCategory === "همه" ||
+         product.category === selectedCategory) &&
+        (product.name.toLowerCase().includes(query))
+      );
+
+      if (filtered.length === 0) {
+        const message = document.createElement("p");
+        message.className = "empty";
+        message.textContent = products.length === 0
+          ? "محصولات فروشگاه به‌زودی اضافه می‌شوند."
+          : "محصولی با این مشخصات پیدا نشد.";
+        productsBox.appendChild(message);
+        return;
+      }
+
+      filtered.forEach(product => {
+        const card = document.createElement("article");
+        card.className = "product";
+
+        if (product.image) {
+          const img = document.createElement("img");
+          img.src = product.image;
+          img.alt = product.name;
+          img.style.width = "100%";
+          img.style.borderRadius = "10px";
+          card.appendChild(img);
+        }
+
+        const name = document.createElement("h3");
+        name.textContent = product.name;
+        card.appendChild(name);
+
+        const category = document.createElement("p");
+        category.textContent = product.category;
+        card.appendChild(category);
+
+        const price = document.createElement("p");
+        price.className = "price";
+        price.textContent = Number(product.price).toLocaleString("fa-IR") +
+          " تومان";
+        card.appendChild(price);
+
+        productsBox.appendChild(card);
+      });
+    }
+
+    searchBox.addEventListener("input", renderProducts);
+    renderCategories();
+    renderProducts();
+  </script>
+</body>
+</html>
