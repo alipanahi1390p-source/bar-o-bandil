@@ -831,7 +831,138 @@ function clearProductForm() {
     });
 
   document.getElementById("productMessage").textContent = "";
+  }
+  function renderAdminProducts() {
+  const container = document.getElementById("adminProductList");
+  container.replaceChildren();
+
+  if (!data.products.length) {
+    container.textContent = "هنوز محصولی ثبت نشده است.";
+    return;
+  }
+
+  data.products.forEach(product => {
+    const row = document.createElement("div");
+    row.className = "product-row";
+
+    const title = document.createElement("strong");
+    title.textContent = product.name;
+    row.appendChild(title);
+
+    const details = document.createElement("p");
+    details.textContent =
+      Number(product.price).toLocaleString("fa-IR") +
+      " تومان | موجودی: " + product.stock;
+    row.appendChild(details);
+
+    const edit = document.createElement("button");
+    edit.type = "button";
+    edit.className = "gold";
+    edit.textContent = "ویرایش";
+
+    edit.onclick = function() {
+      editingId = product.id;
+
+      document.getElementById("productName").value = product.name;
+      document.getElementById("productCategory").value = product.category || "";
+      document.getElementById("productPrice").value = product.price;
+      document.getElementById("productStock").value = product.stock;
+      document.getElementById("productDescription").value = product.description || "";
+
+      showTab("addProduct", document.querySelectorAll(".tabs button")[2]);
+    };
+
+    row.appendChild(edit);
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "danger";
+    remove.textContent = "حذف";
+
+    remove.onclick = function() {
+      if (!confirm("این محصول حذف شود؟")) return;
+
+      data.products = data.products.filter(p => p.id !== product.id);
+
+      if (saveData()) {
+        renderProducts();
+        renderAdminProducts();
+        renderCategoryFilter();
+      }
+    };
+
+    row.appendChild(remove);
+    container.appendChild(row);
+  });
 }
 
-function renderAdminProducts() {
-  const container = document.getElementById("admi
+function downloadBackup() {
+  const backup = {
+    data: data,
+    password: localStorage.getItem(PASSWORD_KEY) || "1234"
+  };
+
+  const blob = new Blob(
+    [JSON.stringify(backup, null, 2)],
+    { type: "application/json" }
+  );
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "bar-o-bandil-backup.json";
+  link.click();
+
+  setTimeout(function() {
+    URL.revokeObjectURL(url);
+  }, 1000);
+}
+
+function restoreBackup() {
+  const file = document.getElementById("backupFile").files[0];
+
+  if (!file) {
+    alert("اول فایل پشتیبان را انتخاب کن.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function() {
+    try {
+      const backup = JSON.parse(reader.result);
+      const restored = backup.data || backup;
+
+      if (!restored || !Array.isArray(restored.products)) {
+        throw new Error("Invalid backup");
+      }
+
+      data = { ...defaultData, ...restored };
+
+      if (backup.password) {
+        localStorage.setItem(PASSWORD_KEY, backup.password);
+      }
+
+      if (saveData()) {
+        renderSettings();
+        renderProducts();
+        fillAdminFields();
+        renderAdminProducts();
+        alert("پشتیبان بازیابی شد!");
+      }
+    } catch (error) {
+      alert("فایل پشتیبان معتبر نیست.");
+    }
+  };
+
+  reader.readAsText(file);
+}
+
+renderSettings();
+renderProducts();
+</script>
+
+</body>
+</html>
+
