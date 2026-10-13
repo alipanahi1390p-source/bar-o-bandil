@@ -2,16 +2,22 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>بار و بندیل | فروشگاه کیف</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172554">
+<meta name="description" content="بار و بندیل؛ فروشگاه آنلاین کیف و محصولات متنوع">
+<title>بار و بندیل | فروشگاه آنلاین</title>
 
 <style>
 :root {
-  --bg: #f4f7f4;
+  --primary: #172554;
+  --primary2: #2563eb;
+  --bg: #f4f7fc;
   --card: #ffffff;
-  --text: #173d30;
-  --main: #075b43;
-  --gold: #d7b568;
+  --text: #172033;
+  --muted: #64748b;
+  --green: #16a34a;
+  --red: #dc2626;
+  --border: #e2e8f0;
 }
 
 * {
@@ -23,212 +29,339 @@ body {
   font-family: Tahoma, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.9;
 }
 
-header {
-  background: var(--main);
-  color: white;
-  padding: 24px 15px;
-  text-align: center;
-  border-bottom: 4px solid var(--gold);
-}
-
-.logo {
-  max-width: 110px;
-  max-height: 100px;
-  object-fit: contain;
-}
-
-header h1 {
-  margin: 5px 0;
-}
-
-button, input, select, textarea {
+button, input, textarea, select {
   font: inherit;
 }
 
 button {
   cursor: pointer;
-  border: 0;
-  border-radius: 10px;
-  padding: 10px 16px;
 }
 
-.admin-button {
-  background: var(--gold);
-  color: #252015;
-  margin-top: 12px;
+header {
+  background: linear-gradient(135deg, #172554, #1e40af);
+  color: white;
+  padding: 24px 16px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 26px;
   font-weight: bold;
 }
 
-/* این دکمه مستقیماً پنل را باز می‌کند */
-#adminModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, .72);
-  padding: 12px;
-  overflow-y: auto;
-  align-items: flex-start;
-  justify-content: center;
+.tagline {
+  margin-top: 8px;
+  color: #dbeafe;
+  font-size: 13px;
 }
 
-#adminModal.visible {
+.header-actions {
   display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.panel {
-  width: 100%;
-  max-width: 650px;
-  background: var(--card);
-  color: var(--text);
-  border-radius: 16px;
-  padding: 18px;
-  margin: auto;
-  border-top: 5px solid var(--gold);
-}
-
-.close-button {
-  background: #a62e2e;
-  color: white;
-  float: left;
-}
-
-main {
+.container {
   max-width: 1100px;
   margin: auto;
   padding: 18px;
 }
 
-.welcome, .box {
-  background: var(--card);
-  border-radius: 14px;
-  padding: 18px;
-  margin: 18px 0;
-  box-shadow: 0 3px 15px #0000000b;
-}
-
-input, select, textarea {
-  display: block;
-  width: 100%;
-  padding: 11px;
-  margin: 6px 0 14px;
-  border: 1px solid #cbd5ce;
-  border-radius: 9px;
-  background: white;
-  color: #222;
-}
-
-label {
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 15px;
   font-weight: bold;
+  display: inline-block;
 }
 
-.primary {
-  background: var(--main);
+.btn-primary {
+  background: var(--primary2);
   color: white;
 }
 
-.gold {
-  background: var(--gold);
-  color: #282016;
+.btn-light {
+  background: white;
+  color: var(--primary);
 }
 
-.danger {
-  background: #a62e2e;
+.btn-green {
+  background: var(--green);
   color: white;
 }
 
-.tabs {
+.btn-red {
+  background: var(--red);
+  color: white;
+}
+
+.btn-gray {
+  background: #e2e8f0;
+  color: #172033;
+}
+
+.search-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
+  gap: 10px;
   margin: 18px 0;
+  flex-wrap: wrap;
 }
 
-.tabs button {
-  background: #e5ebe6;
-  color: #173d30;
+input, textarea, select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: white;
+  outline: none;
+  min-width: 0;
 }
 
-.tabs button.active {
-  background: var(--main);
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary2);
+}
+
+.search-row input {
+  flex: 1;
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 5px 0 14px;
+}
+
+.category-btn {
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  background: white;
+  padding: 9px 15px;
+  border-radius: 30px;
+}
+
+.category-btn.active {
+  background: var(--primary);
   color: white;
 }
 
-.admin-section {
-  display: none;
-  padding-top: 12px;
-}
-
-.admin-section.active {
-  display: block;
+.section-title {
+  font-size: 20px;
+  margin: 22px 0 15px;
 }
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.product {
-  background: var(--card);
-  border-radius: 13px;
+.product-card {
+  background: white;
+  border-radius: 15px;
   overflow: hidden;
-  border: 1px solid #e1e5e1;
+  box-shadow: 0 3px 15px #0f172a0b;
+  border: 1px solid #edf0f6;
+  min-width: 0;
 }
 
-.product img {
+.product-image {
   width: 100%;
-  height: 200px;
-  object-fit: contain;
-  background: #fff;
+  height: 170px;
+  object-fit: cover;
+  background: #e2e8f0;
+  display: block;
 }
 
 .product-info {
-  padding: 13px;
+  padding: 12px;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.product-description {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .price {
-  color: var(--main);
+  color: #1d4ed8;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  margin: 10px 0 5px;
 }
 
-.order {
-  display: block;
+.stock {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.product-actions .btn {
   text-align: center;
   text-decoration: none;
-  background: var(--main);
-  color: white;
-  border-radius: 9px;
-  padding: 9px;
-  margin-top: 10px;
+  font-size: 12px;
+  padding: 10px 5px;
 }
 
-.product-row {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 12px;
-  margin: 10px 0;
-}
-
-footer {
+.empty {
+  background: white;
+  border-radius: 12px;
+  padding: 28px 15px;
   text-align: center;
-  padding: 25px;
-  background: var(--main);
-  color: white;
-  margin-top: 30px;
+  color: var(--muted);
+  line-height: 2;
 }
 
-.small {
-  font-size: 13px;
-  opacity: .8;
+.admin-panel {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 16px;
+  margin: 22px 0;
 }
 
 .hidden {
   display: none !important;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.preview {
+  max-width: 180px;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: #f1f5f9;
+}
+
+.admin-product {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-product-info {
+  flex: 1;
+  min-width: 130px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.admin-product-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-product-actions .btn {
+  padding: 9px;
+  font-size: 12px;
+}
+
+.notice {
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 2;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  font-size: 13px;
+  line-height: 2;
+  margin-top: 10px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (min-width: 650px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 950px) {
+  .products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 </style>
 </head>
@@ -236,764 +369,560 @@ footer {
 <body>
 
 <header>
-  <img id="storeLogo" class="logo hidden" alt="لوگوی بار و بندیل">
+  <div class="header-inner">
+    <div>
+      <div class="logo">🛍️ بار و بندیل</div>
+      <div class="tagline">انتخاب خوب، خرید راحت!</div>
+    </div>
 
-  <h1 id="storeName">بار و بندیل</h1>
-  <p id="storeSlogan">انتخابی شیک برای استایل شما</p>
+    <div class="header-actions">
+      <button class="btn btn-light" id="openLoginBtn">
+        ورود مدیریت
+      </button>
 
-  <button
-    type="button"
-    class="admin-button"
-    onclick="openAdmin()">
-    ⚙️ مدیریت و تنظیمات
-  </button>
+      <a class="btn btn-green" id="headerWhatsApp"
+         href="#" target="_blank" rel="noopener">
+        سفارش در واتساپ
+      </a>
+    </div>
+  </div>
 </header>
 
-<main>
-  <section class="welcome">
-    <h2>به بار و بندیل خوش اومدی! 💚</h2>
-    <p>کیف موردعلاقه‌ات رو اینجا پیدا کن.</p>
+<main class="container">
 
-    <input
-      id="search"
-      type="search"
-      placeholder="🔎 جست‌وجوی محصول..."
-      oninput="renderProducts()">
+  <section id="loginPanel" class="admin-panel hidden">
+    <h2 class="section-title">🔐 ورود مدیر فروشگاه</h2>
 
-    <select id="categoryFilter" onchange="renderProducts()">
-      <option value="">همهٔ دسته‌بندی‌ها</option>
-    </select>
+    <p class="product-description">
+      با ایمیل و رمزی که در Supabase ساخته‌ای وارد شو.
+    </p>
+
+    <form id="loginForm" class="form-grid">
+      <div class="field wide">
+        <label for="loginEmail">ایمیل مدیر</label>
+        <input id="loginEmail" type="email"
+               autocomplete="username" required>
+      </div>
+
+      <div class="field wide">
+        <label for="loginPassword">رمز عبور</label>
+        <input id="loginPassword" type="password"
+               autocomplete="current-password" required>
+      </div>
+
+      <div class="wide form-buttons">
+        <button class="btn btn-primary" type="submit">
+          ورود به پنل
+        </button>
+
+        <button class="btn btn-gray" type="button"
+                id="closeLoginBtn">
+          بستن
+        </button>
+      </div>
+    </form>
+
+    <div id="loginStatus" class="status" aria-live="polite"></div>
   </section>
 
-  <h2>👜 محصولات فروشگاه</h2>
+  <section id="adminPanel" class="admin-panel hidden">
+    <div class="header-inner">
+      <h2 class="section-title">⚙️ مدیریت بار و بندیل</h2>
 
-  <div id="productList" class="products"></div>
+      <button class="btn btn-red" id="logoutBtn">
+        خروج از حساب
+      </button>
+    </div>
 
-  <section class="welcome">
-    <p>ممنون که از فروشگاه ما دیدن کردی 💚</p>
+    <div class="notice">
+      تغییرات محصولات و دسته‌بندی‌ها در دیتابیس آنلاین ذخیره می‌شوند.
+      فقط حسابی که دسترسی مدیر دارد می‌تواند آن‌ها را تغییر دهد.
+    </div>
+
+    <h3>📦 افزودن یا ویرایش محصول</h3>
+
+    <form id="productForm">
+      <input id="productId" type="hidden">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="productName">نام محصول *</label>
+          <input id="productName" required maxlength="150">
+        </div>
+
+        <div class="field">
+          <label for="productPrice">قیمت به تومان *</label>
+          <input id="productPrice" type="number"
+                 min="0" step="1" required>
+        </div>
+
+        <div class="field">
+          <label for="productStock">موجودی *</label>
+          <input id="productStock" type="number"
+                 min="0" step="1" value="0" required>
+        </div>
+
+        <div class="field">
+          <label for="productCategory">دسته‌بندی</label>
+          <select id="productCategory">
+            <option value="">بدون دسته‌بندی</option>
+          </select>
+        </div>
+
+        <div class="field wide">
+          <label for="productDescription">توضیحات محصول</label>
+          <textarea id="productDescription"
+                    maxlength="3000"></textarea>
+        </div>
+
+        <div class="field wide">
+          <label for="productImage">عکس محصول از گالری گوشی</label>
+          <input id="productImage" type="file"
+                 accept="image/jpeg,image/png,image/webp,image/gif">
+
+          <img id="imagePreview" class="preview hidden"
+               alt="پیش‌نمایش عکس محصول">
+
+          <div class="product-description">
+            انتخاب عکس جدید اختیاری است. اگر محصول را ویرایش کنی
+            و عکس جدید انتخاب نکنی، عکس قبلی حفظ می‌شود.
+          </div>
+        </div>
+
+        <div class="field">
+          <label>
+            <input id="productAvailable" type="checkbox" checked
+                   style="width:auto">
+            نمایش محصول در فروشگاه
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-buttons">
+        <button class="btn btn-primary" type="submit"
+                id="saveProductBtn">
+          ذخیره محصول
+        </button>
+
+        <button class="btn btn-gray" type="button"
+                id="cancelEditBtn">
+          پاک‌کردن فرم
+        </button>
+      </div>
+
+      <div id="productStatus" class="status"
+           aria-live="polite"></div>
+    </form>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:24px 0">
+
+    <h3>📂 مدیریت دسته‌بندی‌ها</h3>
+
+    <form id="categoryForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="categoryName">نام دسته‌بندی جدید</label>
+          <input id="categoryName" maxlength="100" required>
+        </div>
+
+        <div class="field" style="align-self:end">
+          <button class="btn btn-primary" type="submit">
+            افزودن دسته‌بندی
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div id="categoryList"></div>
+    <div id="categoryStatus" class="status"
+         aria-live="polite"></div>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:24px 0">
+
+    <h3>🛒 محصولات ثبت‌شده</h3>
+    <div id="adminProducts"></div>
+
   </section>
+
+  <section>
+    <h2 class="section-title">محصولات فروشگاه</h2>
+
+    <div class="search-row">
+      <input id="searchInput"
+             type="search"
+             placeholder="🔎 جست‌وجوی محصول...">
+    </div>
+
+    <div id="categoryButtons" class="categories"></div>
+
+    <div id="shopStatus" class="status"
+         aria-live="polite"></div>
+
+    <div id="productsGrid" class="products"></div>
+  </section>
+
 </main>
 
 <footer>
-  <strong id="footerName">بار و بندیل</strong>
-  <p>انتخابی شیک برای استایل شما ✨</p>
+  <div>بار و بندیل 💙</div>
+  <div style="margin-top:8px">
+    خرید راحت، انتخاب مطمئن
+  </div>
 </footer>
 
-<!-- پنل مدیریت -->
-<div id="adminModal" onclick="if(event.target===this) closeAdmin()">
-  <div class="panel">
+<script type="module">
+import { createClient } from
+  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-    <button type="button" class="close-button"
-      onclick="closeAdmin()">بستن ✕</button>
+/* ==========================================
+   تنظیمات اصلی فروشگاه بار و بندیل
+   ========================================== */
 
-    <h2>⚙️ پنل مدیریت بار و بندیل</h2>
-    <p>از این قسمت می‌تونی سایتت رو مدیریت کنی.</p>
+const SUPABASE_URL =
+  'https://ntoductfjjupokxlxfvp.supabase.co';
 
-    <div id="loginArea">
-      <label for="adminPassword">رمز مدیریت:</label>
+const SUPABASE_KEY =
+  'sb_publishable_7dgmNOM94sj3okx5xAb9dA_xZ43tQA5';
 
-      <input
-        id="adminPassword"
-        type="password"
-        placeholder="رمز مدیریت را وارد کن"
-        autocomplete="current-password">
+/*
+  بعداً شماره واتساپ فروشگاه را وارد کن.
+  قالب: کد کشور + شماره، فقط اعداد.
+  نمونه قالب ایران: 98912XXXXXXX
+  Xها را با شماره واقعی فروشگاه جایگزین کن.
+*/
+const WHATSAPP_NUMBER = '989xxxxxxxxx';
 
-      <button type="button" class="primary" onclick="login()">
-        ورود به مدیریت
-      </button>
+const IMAGE_BUCKET = 'product-images';
 
-      <p id="loginMessage"></p>
-      <p class="small">رمز اولیه: 1234</p>
-    </div>
+const supabase = createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 
-    <div id="managementArea" class="hidden">
+/* ==========================================
+   عناصر صفحه
+   ========================================== */
 
-      <button type="button" class="danger"
-        onclick="logout()">خروج از مدیریت</button>
+const $ = id => document.getElementById(id);
 
-      <div class="tabs">
-        <button type="button" class="active"
-          onclick="showTab('appearance',this)">🎨 ظاهر سایت</button>
+let products = [];
+let categories = [];
+let currentCategory = 'all';
+let currentUser = null;
+let isAdmin = false;
+let imagePreviewUrl = '';
 
-        <button type="button"
-          onclick="showTab('settings',this)">🏪 اطلاعات فروشگاه</button>
+/* ==========================================
+   ابزارهای کمکی
+   ========================================== */
 
-        <button type="button"
-          onclick="showTab('addProduct',this)">➕ افزودن محصول</button>
-
-        <button type="button"
-          onclick="showTab('manageProducts',this)">👜 محصولات</button>
-
-        <button type="button"
-          onclick="showTab('backup',this)">💾 پشتیبان</button>
-      </div>
-
-      <!-- ظاهر -->
-      <section id="appearance" class="admin-section active">
-        <h3>ظاهر سایت</h3>
-
-        <label for="theme">انتخاب رنگ سایت:</label>
-        <select id="theme">
-          <option value="green">💚 زمردی و طلایی</option>
-          <option value="black">🖤 مشکی و طلایی</option>
-          <option value="white">🤍 سفید و طلایی</option>
-          <option value="pink">💗 صورتی و رزگلد</option>
-        </select>
-
-        <label for="titleInput">عنوان بالای سایت:</label>
-        <input id="titleInput">
-
-        <label for="sloganInput">متن زیر عنوان:</label>
-        <input id="sloganInput">
-
-        <button type="button" class="primary"
-          onclick="saveAppearance()">ذخیره ظاهر</button>
-      </section>
-
-      <!-- تنظیمات -->
-      <section id="settings" class="admin-section">
-        <h3>اطلاعات فروشگاه</h3>
-
-        <label for="nameInput">نام فروشگاه:</label>
-        <input id="nameInput">
-
-        <label for="shopSloganInput">شعار فروشگاه:</label>
-        <input id="shopSloganInput">
-
-        <label for="whatsappInput">شماره واتساپ با کد کشور، فقط عدد:</label>
-        <input id="whatsappInput" inputmode="numeric"
-          placeholder="مثلاً 989121234567">
-
-        <label for="logoInput">انتخاب لوگو:</label>
-        <input id="logoInput" type="file" accept="image/*">
-
-        <button type="button" class="primary"
-          onclick="saveSettings()">ذخیره اطلاعات</button>
-      </section>
-
-      <!-- افزودن محصول -->
-      <section id="addProduct" class="admin-section">
-        <h3>افزودن محصول جدید</h3>
-
-        <label for="productName">نام محصول:</label>
-        <input id="productName" placeholder="مثلاً کیف دوشی">
-
-        <label for="productCategory">دسته‌بندی:</label>
-        <input id="productCategory" placeholder="مثلاً کیف زنانه">
-
-        <label for="productPrice">قیمت به تومان:</label>
-        <input id="productPrice" type="number" min="0"
-          placeholder="مثلاً 450000">
-
-        <label for="productStock">موجودی:</label>
-        <input id="productStock" type="number" min="0"
-          placeholder="مثلاً 5">
-
-        <label for="productDescription">توضیحات:</label>
-        <textarea id="productDescription"
-          placeholder="توضیحات محصول"></textarea>
-
-        <label for="productImage">عکس محصول:</label>
-        <input id="productImage" type="file" accept="image/*">
-
-        <button type="button" class="primary"
-          onclick="saveProduct()">ذخیره محصول</button>
-
-        <button type="button" class="gold"
-          onclick="clearProductForm()">پاک کردن فرم</button>
-
-        <p id="productMessage"></p>
-      </section>
-
-      <!-- مدیریت محصولات -->
-      <section id="manageProducts" class="admin-section">
-        <h3>محصولات ثبت‌شده</h3>
-        <div id="adminProductList"></div>
-      </section>
-
-      <!-- پشتیبان -->
-      <section id="backup" class="admin-section">
-        <h3>پشتیبان‌گیری</h3>
-
-        <p>
-          برای نگهداری اطلاعات، از فروشگاه فایل پشتیبان بگیر.
-        </p>
-
-        <button type="button" class="primary"
-          onclick="downloadBackup()">دانلود پشتیبان</button>
-
-        <label for="backupFile">بازیابی فایل پشتیبان:</label>
-        <input id="backupFile" type="file" accept=".json,application/json">
-
-        <button type="button" class="gold"
-          onclick="restoreBackup()">بازیابی پشتیبان</button>
-      </section>
-
-    </div>
-  </div>
-</div>
-
-<script>
-/* اطلاعات اولیه فروشگاه */
-const STORAGE_KEY = "bar-o-bandil-store-v2";
-const PASSWORD_KEY = "bar-o-bandil-password-v2";
-
-const defaultData = {
-  name: "بار و بندیل",
-  slogan: "انتخابی شیک برای استایل شما",
-  theme: "green",
-  whatsapp: "",
-  logo: "",
-  products: []
-};
-
-function loadData() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
-      return { ...defaultData, ...JSON.parse(saved) };
-    }
-  } catch (error) {
-    console.error(error);
-  }
-
-  return { ...defaultData, products: [] };
+function escapeHTML(value = '') {
+  return String(value).replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[char]);
 }
 
-let data = loadData();
-let editingId = null;
+function formatPrice(value) {
+  return Number(value || 0).toLocaleString('fa-IR') + ' تومان';
+}
 
-function saveData() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    return true;
-  } catch (error) {
-    alert("فضای ذخیره‌سازی مرورگر کافی نیست. عکس کوچک‌تری انتخاب کن.");
-    return false;
+function setStatus(id, message, error = false) {
+  const element = $(id);
+  element.textContent = message;
+  element.style.color = error ? '#dc2626' : '#166534';
+}
+
+function friendlyError(error) {
+  const message = error?.message || 'خطای ناشناخته';
+
+  if (/Invalid login credentials/i.test(message)) {
+    return 'ایمیل یا رمز عبور اشتباه است.';
+  }
+
+  if (/duplicate key/i.test(message)) {
+    return 'این نام قبلاً ثبت شده است.';
+  }
+
+  if (/row-level security|permission denied|not allowed/i.test(message)) {
+    return 'اجازه این کار را نداری. دسترسی مدیر و تنظیمات امنیتی را بررسی کن.';
+  }
+
+  return message;
+}
+
+function setWhatsAppLinks() {
+  const validNumber = /^\d{10,15}$/.test(WHATSAPP_NUMBER);
+
+  const link = validNumber
+    ? `https://wa.me/${WHATSAPP_NUMBER}`
+    : '#';
+
+  $('headerWhatsApp').href = link;
+
+  if (!validNumber) {
+    $('headerWhatsApp').addEventListener('click', event => {
+      event.preventDefault();
+      alert('ابتدا شماره واتساپ فروشگاه را در تنظیمات کد وارد کن.');
+    });
   }
 }
 
-/* تغییر ظاهر */
-function applyTheme() {
-  const themes = {
-    green: { bg: "#f4f7f4", card: "#ffffff", text: "#173d30", main: "#075b43", gold: "#d7b568" },
-    black: { bg: "#171717", card: "#252525", text: "#f5f1e7", main: "#111111", gold: "#d7b568" },
-    white: { bg: "#ffffff", card: "#ffffff", text: "#333333", main: "#e9e6df", gold: "#c6a24d" },
-    pink: { bg: "#fff4f7", card: "#ffffff", text: "#633b4a", main: "#a94e70", gold: "#d8a1a9" }
-  };
+function getCategoryName(categoryId) {
+  const category = categories.find(
+    item => String(item.id) === String(categoryId)
+  );
 
-  const theme = themes[data.theme] || themes.green;
-
-  document.documentElement.style.setProperty("--bg", theme.bg);
-  document.documentElement.style.setProperty("--card", theme.card);
-  document.documentElement.style.setProperty("--text", theme.text);
-  document.documentElement.style.setProperty("--main", theme.main);
-  document.documentElement.style.setProperty("--gold", theme.gold);
+  return category ? category.name : 'بدون دسته‌بندی';
 }
 
-/* نمایش اطلاعات فروشگاه */
-function renderSettings() {
-  document.getElementById("storeName").textContent = data.name;
-  document.getElementById("footerName").textContent = data.name;
-  document.getElementById("storeSlogan").textContent = data.slogan;
+/* ==========================================
+   دریافت محصولات و دسته‌بندی‌ها
+   ========================================== */
 
-  const logo = document.getElementById("storeLogo");
+async function loadCategories() {
+  const { data, error } = await supabase
+    .from('categories')
+    .select('id, name')
+    .order('name');
 
-  if (data.logo) {
-    logo.src = data.logo;
-    logo.classList.remove("hidden");
-  } else {
-    logo.removeAttribute("src");
-    logo.classList.add("hidden");
+  if (error) throw error;
+
+  categories = data || [];
+  renderCategorySelect();
+  renderCategoryButtons();
+  renderCategoryList();
+}
+
+async function loadProducts() {
+  $('shopStatus').textContent = 'در حال دریافت محصولات...';
+
+  const { data, error } = await supabase
+    .from('products')
+    .select(
+      'id, name, description, price, stock, image_url, category_id, is_available, created_at'
+    )
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    $('shopStatus').textContent =
+      'دریافت محصولات ناموفق بود: ' + friendlyError(error);
+
+    $('productsGrid').innerHTML = '';
+    throw error;
   }
 
-  document.title = data.name + " | فروشگاه کیف";
-  applyTheme();
-  renderCategoryFilter();
-}
+  products = data || [];
+  $('shopStatus').textContent = '';
 
-/* دسته‌بندی‌ها */
-function renderCategoryFilter() {
-  const select = document.getElementById("categoryFilter");
-  const oldValue = select.value;
+  renderProducts();
 
-  const categories = [...new Set(
-    data.products.map(p => p.category).filter(Boolean)
-  )];
-
-  select.innerHTML = '<option value="">همهٔ دسته‌بندی‌ها</option>';
-
-  categories.forEach(category => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.textContent = category;
-    select.appendChild(option);
-  });
-
-  if (categories.includes(oldValue)) {
-    select.value = oldValue;
-  }
-}
-
-/* نمایش محصولات */
-function renderProducts() {
-  const container = document.getElementById("productList");
-  const search = document.getElementById("search").value.trim().toLowerCase();
-  const category = document.getElementById("categoryFilter").value;
-
-  container.replaceChildren();
-
-  const products = data.products.filter(product => {
-    const matchesSearch =
-      (product.name || "").toLowerCase().includes(search) ||
-      (product.description || "").toLowerCase().includes(search);
-
-    const matchesCategory =
-      !category || product.category === category;
-
-    return matchesSearch && matchesCategory;
-  });
-
-  if (products.length === 0) {
-    container.textContent = "هنوز محصولی ثبت نشده است. 💚";
-    return;
-  }
-
-  products.forEach(product => {
-    const card = document.createElement("article");
-    card.className = "product";
-
-    if (product.image) {
-      const img = document.createElement("img");
-      img.src = product.image;
-      img.alt = product.name || "محصول";
-      card.appendChild(img);
-    }
-
-    const info = document.createElement("div");
-    info.className = "product-info";
-
-    const name = document.createElement("h3");
-    name.textContent = product.name;
-    info.appendChild(name);
-
-    const desc = document.createElement("p");
-    desc.textContent = product.description || "";
-    info.appendChild(desc);
-
-    const price = document.createElement("p");
-    price.className = "price";
-    price.textContent =
-      Number(product.price || 0).toLocaleString("fa-IR") + " تومان";
-    info.appendChild(price);
-
-    const stock = document.createElement("p");
-    stock.textContent = Number(product.stock) > 0
-      ? "موجودی: " + product.stock
-      : "ناموجود";
-    info.appendChild(stock);
-
-    if (Number(product.stock) > 0) {
-      const order = document.createElement("a");
-      order.className = "order";
-      order.textContent = "سفارش در واتساپ";
-
-      const phone = (data.whatsapp || "").replace(/\D/g, "");
-      const message = "سلام، محصول «" + product.name +
-        "» را از فروشگاه بار و بندیل می‌خواهم.";
-
-      if (phone) {
-        order.href = "https://wa.me/" + phone +
-          "?text=" + encodeURIComponent(message);
-        order.target = "_blank";
-        order.rel = "noopener noreferrer";
-      } else {
-        order.href = "#";
-        order.onclick = function(event) {
-          event.preventDefault();
-          alert("شماره واتساپ را از پنل مدیریت ثبت کن.");
-        };
-      }
-
-      info.appendChild(order);
-    }
-
-    card.appendChild(info);
-    container.appendChild(card);
-  });
-}
-
-/* باز و بسته کردن پنل: با onclick مستقیم */
-function openAdmin() {
-  document.getElementById("adminModal").classList.add("visible");
-  document.getElementById("adminPassword").value = "";
-  document.getElementById("loginMessage").textContent = "";
-  document.getElementById("loginArea").classList.remove("hidden");
-  document.getElementById("managementArea").classList.add("hidden");
-}
-
-function closeAdmin() {
-  document.getElementById("adminModal").classList.remove("visible");
-}
-
-function login() {
-  const password = document.getElementById("adminPassword").value;
-  const savedPassword = localStorage.getItem(PASSWORD_KEY) || "1234";
-
-  if (password !== savedPassword) {
-    document.getElementById("loginMessage").textContent =
-      "رمز اشتباه است. دوباره امتحان کن.";
-    return;
-  }
-
-  document.getElementById("loginArea").classList.add("hidden");
-  document.getElementById("managementArea").classList.remove("hidden");
-
-  fillAdminFields();
-  renderAdminProducts();
-}
-
-function logout() {
-  document.getElementById("managementArea").classList.add("hidden");
-  document.getElementById("loginArea").classList.remove("hidden");
-}
-
-/* جابه‌جایی بین بخش‌ها */
-function showTab(id, button) {
-  document.querySelectorAll(".admin-section").forEach(section => {
-    section.classList.remove("active");
-  });
-
-  document.querySelectorAll(".tabs button").forEach(tab => {
-    tab.classList.remove("active");
-  });
-
-  document.getElementById(id).classList.add("active");
-
-  if (button) {
-    button.classList.add("active");
-  }
-
-  if (id === "manageProducts") {
+  if (isAdmin) {
     renderAdminProducts();
   }
 }
 
-function fillAdminFields() {
-  document.getElementById("theme").value = data.theme;
-  document.getElementById("titleInput").value = data.name;
-  document.getElementById("sloganInput").value = data.slogan;
-  document.getElementById("nameInput").value = data.name;
-  document.getElementById("shopSloganInput").value = data.slogan;
-  document.getElementById("whatsappInput").value = data.whatsapp;
-}
-
-/* ذخیره ظاهر */
-function saveAppearance() {
-  data.theme = document.getElementById("theme").value;
-
-  const title = document.getElementById("titleInput").value.trim();
-  const slogan = document.getElementById("sloganInput").value.trim();
-
-  if (title) data.name = title;
-  data.slogan = slogan;
-
-  if (saveData()) {
-    renderSettings();
-    alert("ظاهر سایت ذخیره شد! 💚");
+async function refreshAll() {
+  try {
+    await loadCategories();
+    await loadProducts();
+  } catch (error) {
+    console.error(error);
   }
 }
 
-/* ذخیره اطلاعات فروشگاه */
-function saveSettings() {
-  const name = document.getElementById("nameInput").value.trim();
+/* ==========================================
+   نمایش دسته‌بندی‌ها
+   ========================================== */
 
-  if (!name) {
-    alert("نام فروشگاه را وارد کن.");
+function renderCategorySelect() {
+  const select = $('productCategory');
+  const oldValue = select.value;
+
+  select.innerHTML =
+    '<option value="">بدون دسته‌بندی</option>' +
+    categories.map(category => `
+      <option value="${escapeHTML(category.id)}">
+        ${escapeHTML(category.name)}
+      </option>
+    `).join('');
+
+  if (categories.some(c => String(c.id) === oldValue)) {
+    select.value = oldValue;
+  }
+}
+
+function renderCategoryButtons() {
+  const allButton = `
+    <button class="category-btn ${currentCategory === 'all' ? 'active' : ''}"
+            data-category="all">
+      همه محصولات
+    </button>
+  `;
+
+  $('categoryButtons').innerHTML = allButton +
+    categories.map(category => `
+      <button
+        class="category-btn ${String(currentCategory) === String(category.id) ? 'active' : ''}"
+        data-category="${escapeHTML(category.id)}">
+        ${escapeHTML(category.name)}
+      </button>
+    `).join('');
+}
+
+function renderCategoryList() {
+  if (!categories.length) {
+    $('categoryList').innerHTML =
+      '<div class="empty">هنوز دسته‌بندی‌ای نساخته‌ای.</div>';
     return;
   }
 
-  data.name = name;
-  data.slogan = document.getElementById("shopSloganInput").value.trim();
-  data.whatsapp = document.getElementById("whatsappInput").value.replace(/\D/g, "");
+  $('categoryList').innerHTML = categories.map(category => `
+    <div class="admin-product">
+      <div class="admin-product-info">
+        <strong>${escapeHTML(category.name)}</strong>
+      </div>
 
-  const file = document.getElementById("logoInput").files[0];
-
-  function finish() {
-    if (saveData()) {
-      renderSettings();
-      alert("اطلاعات فروشگاه ذخیره شد!");
-    }
-  }
-
-  if (file) {
-    if (!file.type.startsWith("image/")) {
-      alert("لطفاً فایل تصویری انتخاب کن.");
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function() {
-      data.logo = reader.result;
-      finish();
-    };
-
-    reader.onerror = function() {
-      alert("خواندن لوگو انجام نشد.");
-    };
-
-    reader.readAsDataURL(file);
-  } else {
-    finish();
-  }
+      <div class="admin-product-actions">
+        <button class="btn btn-red"
+                data-delete-category="${escapeHTML(category.id)}">
+          حذف دسته‌بندی
+        </button>
+      </div>
+    </div>
+  `).join('');
 }
 
-/* افزودن و ویرایش محصول */
-function saveProduct() {
-  const name = document.getElementById("productName").value.trim();
-  const category = document.getElementById("productCategory").value.trim();
-  const price = document.getElementById("productPrice").value;
-  const stock = document.getElementById("productStock").value;
-  const description = document.getElementById("productDescription").value.trim();
-  const file = document.getElementById("productImage").files[0];
+$('categoryButtons').addEventListener('click', event => {
+  const button = event.target.closest('[data-category]');
+  if (!button) return;
 
-  if (!name || price === "" || stock === "") {
-    alert("نام، قیمت و موجودی را وارد کن.");
-    return;
-  }
+  currentCategory = button.dataset.category;
+  renderCategoryButtons();
+  renderProducts();
+});
 
-  const oldProduct = editingId === null
-    ? null
-    : data.products.find(p => p.id === editingId);
+/* ==========================================
+   نمایش محصولات برای مشتری‌ها
+   ========================================== */
 
-  const product = {
-    id: editingId === null ? Date.now() : editingId,
-    name,
-    category,
-    price: Number(price),
-    stock: Number(stock),
-    description,
-    image: oldProduct ? oldProduct.image : ""
-  };
+function renderProducts() {
+  const query = $('searchInput').value.trim().toLowerCase();
 
-  function finish() {
-    if (editingId === null) {
-      data.products.push(product);
-    } else {
-      const index = data.products.findIndex(p => p.id === editingId);
-      if (index !== -1) data.products[index] = product;
-    }
+  const visibleProducts = products.filter(product => {
+    if (!product.is_available) return false;
 
-    if (saveData()) {
-      clearProductForm();
-      renderProducts();
-      renderAdminProducts();
-      renderCategoryFilter();
+    const matchesCategory =
+      currentCategory === 'all' ||
+      String(product.category_id) === String(currentCategory);
 
-      document.getElementById("productMessage").textContent =
-        "محصول با موفقیت ذخیره شد!";
+    const matchesSearch =
+      String(product.name || '').toLowerCase().includes(query) ||
+      String(product.description || '').toLowerCase().includes(query);
 
-      alert("محصول ذخیره شد! 💚");
-    }
-  }
-
-  if (file) {
-    if (!file.type.startsWith("image/")) {
-      alert("لطفاً برای محصول یک عکس انتخاب کن.");
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function() {
-      product.image = reader.result;
-      finish();
-    };
-
-    reader.onerror = function() {
-      alert("خواندن عکس انجام نشد.");
-    };
-
-    reader.readAsDataURL(file);
-  } else {
-    finish();
-  }
-}
-
-function clearProductForm() {
-  editingId = null;
-
-  ["productName", "productCategory", "productPrice",
-   "productStock", "productDescription", "productImage"]
-    .forEach(id => {
-      document.getElementById(id).value = "";
-    });
-
-  document.getElementById("productMessage").textContent = "";
-  }
-  function renderAdminProducts() {
-  const container = document.getElementById("adminProductList");
-  container.replaceChildren();
-
-  if (!data.products.length) {
-    container.textContent = "هنوز محصولی ثبت نشده است.";
-    return;
-  }
-
-  data.products.forEach(product => {
-    const row = document.createElement("div");
-    row.className = "product-row";
-
-    const title = document.createElement("strong");
-    title.textContent = product.name;
-    row.appendChild(title);
-
-    const details = document.createElement("p");
-    details.textContent =
-      Number(product.price).toLocaleString("fa-IR") +
-      " تومان | موجودی: " + product.stock;
-    row.appendChild(details);
-
-    const edit = document.createElement("button");
-    edit.type = "button";
-    edit.className = "gold";
-    edit.textContent = "ویرایش";
-
-    edit.onclick = function() {
-      editingId = product.id;
-
-      document.getElementById("productName").value = product.name;
-      document.getElementById("productCategory").value = product.category || "";
-      document.getElementById("productPrice").value = product.price;
-      document.getElementById("productStock").value = product.stock;
-      document.getElementById("productDescription").value = product.description || "";
-
-      showTab("addProduct", document.querySelectorAll(".tabs button")[2]);
-    };
-
-    row.appendChild(edit);
-
-    const remove = document.createElement("button");
-    remove.type = "button";
-    remove.className = "danger";
-    remove.textContent = "حذف";
-
-    remove.onclick = function() {
-      if (!confirm("این محصول حذف شود؟")) return;
-
-      data.products = data.products.filter(p => p.id !== product.id);
-
-      if (saveData()) {
-        renderProducts();
-        renderAdminProducts();
-        renderCategoryFilter();
-      }
-    };
-
-    row.appendChild(remove);
-    container.appendChild(row);
+    return matchesCategory && matchesSearch;
   });
-}
 
-function downloadBackup() {
-  const backup = {
-    data: data,
-    password: localStorage.getItem(PASSWORD_KEY) || "1234"
-  };
-
-  const blob = new Blob(
-    [JSON.stringify(backup, null, 2)],
-    { type: "application/json" }
-  );
-
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-
-  link.href = url;
-  link.download = "bar-o-bandil-backup.json";
-  link.click();
-
-  setTimeout(function() {
-    URL.revokeObjectURL(url);
-  }, 1000);
-}
-
-function restoreBackup() {
-  const file = document.getElementById("backupFile").files[0];
-
-  if (!file) {
-    alert("اول فایل پشتیبان را انتخاب کن.");
+  if (!visibleProducts.length) {
+    $('productsGrid').innerHTML = `
+      <div class="empty" style="grid-column:1/-1">
+        هنوز محصولی برای نمایش وجود ندارد.
+      </div>
+    `;
     return;
   }
 
-  const reader = new FileReader();
+  $('productsGrid').innerHTML = visibleProducts.map(product => {
+    const name = escapeHTML(product.name);
+    const description = escapeHTML(product.description || '');
+    const image = product.image_url
+      ? escapeHTML(product.image_url)
+      : '';
 
-  reader.onload = function() {
-    try {
-      const backup = JSON.parse(reader.result);
-      const restored = backup.data || backup;
+    const imageHTML = image
+      ? `<img class="product-image"
+               src="${image}"
+               alt="${name}"
+               loading="lazy">`
+      : `<div class="product-image"
+              style="display:grid;place-items:center;font-size:42px">
+           🛍️
+         </div>`;
 
-      if (!restored || !Array.isArray(restored.products)) {
-        throw new Error("Invalid backup");
-      }
+    const available = Number(product.stock) > 0;
 
-      data = { ...defaultData, ...restored };
+    const message =
+      `سلام، برای خرید این محصول از بار و بندیل پیام می‌دم:\n` +
+      `نام محصول: ${product.name}\n` +
+      `قیمت: ${formatPrice(product.price)}`;
 
-      if (backup.password) {
-        localStorage.setItem(PASSWORD_KEY, backup.password);
-      }
+    const whatsappReady = /^\d{10,15}$/.test(WHATSAPP_NUMBER);
 
-      if (saveData()) {
-        renderSettings();
-        renderProducts();
-        fillAdminFields();
-        renderAdminProducts();
-        alert("پشتیبان بازیابی شد!");
-      }
-    } catch (error) {
-      alert("فایل پشتیبان معتبر نیست.");
-    }
-  };
+    const orderButton = available && whatsappReady
+      ? `<a class="btn btn-green"
+             href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}"
+             target="_blank" rel="noopener">
+           سفارش این محصول
+         </a>`
+      : `<button class="btn btn-gray" disabled>
+           ${available ? 'شماره واتساپ تنظیم نشده' : 'ناموجود'}
+         </button>`;
 
-  reader.readAsText(file);
+    return `
+      <article class="product-card">
+        ${imageHTML}
+
+        <div class="product-info">
+          <div class="product-name">${name}</div>
+
+          <div class="product-description">
+            ${description}
+          </div>
+
+          <div class="price">${formatPrice(product.price)}</div>
+
+          <div class="stock">
+            ${available
+              ? `موجودی: ${Number(product.stock).toLocaleString('fa-IR')}`
+              : 'در حال حاضر ناموجود'}
+          </div>
+
+          <div class="product-actions">
+            ${orderButton}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
-renderSettings();
-renderProducts();
-/* تغییر رمز پنل مدیریت */
-function changeAdminPassword() {
-  const oldPassword = document.getElementById("oldAdminPassword").value;
-  const newPassword = document.getElementById("newAdminPassword").value;
-  const confirmPassword = document.getElementById("confirmAdminPassword").value;
+$('searchInput').addEventListener('input', renderProducts);
 
-  const savedPassword = localStorage.getItem(PASSWORD_KEY) || "1234";
+/* ==========================================
+   ورود مدیر
+   ========================================== */
 
-  if (oldPassword !== savedPassword) {
-    alert("رمز فعلی اشتباه است!");
-    return;
-  }
+$('openLoginBtn').addEventListener('click', () => {
+  $('loginPanel').classList.toggle('hidden');
+  $('loginPanel').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+});
 
-  if (newPassword.length < 4) {
-    alert("رمز جدید باید حداقل ۴ کاراکتر داشته باشد.");
-    return;
-  }
+$('closeLoginBtn').addEventListener('click', () => {
+  $('loginPanel').classList.add('hidden');
+});
 
-  if (newPassword !== confirmPassword) {
-    alert("رمز جدید و تکرار آن یکسان نیستند!");
-    return;
-  }
+async function checkAdmin() {
+  currentUser = null;
+  isAdmin = false;
 
-  localStorage.setItem(PASSWORD_KEY, newPassword);
-
-  document.getElementById("oldAdminPassword").value = "";
-  document.getElementById("newAdminPassword").value = "";
-  document.getElementById("confirmAdminPassword").value = "";
-
-  alert("رمز مدیریت با موفقیت تغییر کرد! 💚");
-}
-</script>
-
-</body>
-</html>
-
+  const { data: sessionData } =
+    await supabase.auth.getSession();
+      
