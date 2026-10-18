@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<meta name="description" content="بار و بندیل؛ فروشگاه کیف و چمدان">
+<title>بار و بندیل | فروشگاه کیف و چمدان</title>
+<style>
+:root{--bg:#10100f;--panel:#191917;--panel2:#22221e;--gold:#d8b45a;--gold2:#f3d98a;--text:#f8f4e9;--muted:#b9b3a4;--line:#39372f;--danger:#ff7777;--green:#5cc99a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top right,#292316 0,#10100f 38rem);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.topbar{position:sticky;top:0;z-index:20;background:#11110ff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.25rem}.logo{width:48px;height:48px;border-radius:15px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:1.55rem;background:linear-gradient(145deg,#29251b,#111)}.brand small{display:block;color:var(--muted);font-size:.72rem;font-weight:400}.navlinks{display:flex;gap:16px;align-items:center;color:var(--muted);font-size:.92rem}.btn{border:1px solid var(--gold);background:linear-gradient(135deg,var(--gold2),var(--gold));color:#19160d;border-radius:12px;padding:10px 16px;font-weight:800;display:inline-flex;justify-content:center;align-items:center;gap:7px}.btn.secondary{background:transparent;color:var(--gold);border-color:#6e5b2b}.btn.ghost{background:var(--panel2);color:var(--text);border-color:var(--line)}.btn.danger{background:#3b1919;color:#ffb4b4;border-color:#713333}.btn:disabled{opacity:.55;cursor:not-allowed}.hero{padding:54px 0 34px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:center}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.03em}.hero h1{font-size:clamp(2rem,5vw,3.8rem);line-height:1.35;margin:10px 0}.hero h1 span{color:var(--gold)}.hero p{color:var(--muted);max-width:650px}.hero-card{min-height:250px;border:1px solid #66552d;border-radius:28px;padding:26px;background:linear-gradient(145deg,#282316,#171714);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}.hero-card:before,.hero-card:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #6b572b55;border-radius:50%}.hero-card:after{width:260px;height:260px}.hero-icon{font-size:6rem;filter:drop-shadow(0 12px 12px #0008);z-index:1}.hero-card strong{display:block;color:var(--gold2);font-size:1.2rem}.features{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{border:1px solid var(--line);background:#181815;border-radius:999px;padding:7px 12px;color:#e4d9bd;font-size:.84rem}.section{padding:30px 0 52px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.section h2{margin:0;font-size:1.7rem}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}.filters{display:grid;grid-template-columns:1fr 220px 180px;gap:10px;margin-bottom:20px}.field{width:100%;background:#141412;border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px;outline:none}.field:focus{border-color:var(--gold)}select.field option{background:#191917}.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.product{border:1px solid var(--line);border-radius:19px;overflow:hidden;background:linear-gradient(180deg,#1b1b18,#141412);display:flex;flex-direction:column;min-width:0}.product-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#24231f;display:block}.no-image{aspect-ratio:4/3;display:grid;place-items:center;font-size:4rem;background:linear-gradient(145deg,#2b281e,#171715)}.product-body{padding:15px;display:flex;flex-direction:column;gap:8px;flex:1}.product h3{margin:0;font-size:1.06rem}.desc{color:var(--muted);font-size:.87rem;white-space:pre-wrap;overflow-wrap:anywhere}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:8px}.price{color:var(--gold2);font-weight:900;font-size:1.08rem}.stock{font-size:.78rem;color:var(--green)}.stock.out{color:var(--danger)}.product .btn{width:100%;margin-top:8px}.empty,.notice{border:1px dashed var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted);grid-column:1/-1}.about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#151512;padding:28px 0}.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.about-item{padding:16px;border:1px solid var(--line);border-radius:15px}.about-item strong{color:var(--gold2)}.about-item p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.footer{padding:25px 0;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.whatsapp-float{position:fixed;left:16px;bottom:16px;z-index:15;border-radius:999px;background:#16834a;color:#fff;padding:12px 17px;font-weight:900;box-shadow:0 8px 30px #0008;border:1px solid #58d78f}
+.rubika-float{position:fixed;left:16px;bottom:68px;z-index:15;border-radius:999px;background:#2878d0;color:#fff;padding:9px 15px;font-weight:900;box-shadow:0 8px 30px #0008;border:1px solid #79b6ff}.admin-trigger{position:fixed;right:0;bottom:0;width:28px;height:28px;opacity:.06;border:0;background:transparent;color:#fff;z-index:25}.admin-trigger:focus{opacity:.5}.modal{position:fixed;inset:0;z-index:50;background:#000b;display:none;align-items:center;justify-content:center;padding:14px;overflow:auto}.modal.open{display:flex}.modal-box{width:min(850px,100%);max-height:92vh;overflow:auto;background:#171715;border:1px solid #6e5b2b;border-radius:20px;padding:20px;box-shadow:0 20px 80px #000a}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}.modal-head h2{margin:0;font-size:1.3rem}.close{border:1px solid var(--line);background:#24241f;color:var(--text);border-radius:10px;padding:5px 12px}.admin-tabs{display:flex;gap:8px;overflow:auto;padding-bottom:12px;margin-bottom:14px}.admin-tabs button{white-space:nowrap}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-grid .wide{grid-column:1/-1}.label{display:block;font-size:.85rem;color:#d9cfb7;margin-bottom:5px}.admin-list{display:grid;gap:8px;margin-top:12px}.admin-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#20201c}.admin-row small{display:block;color:var(--muted)}.row-actions{display:flex;gap:6px;flex-wrap:wrap}.row-actions .btn{padding:6px 10px;font-size:.8rem}.status{font-size:.87rem;color:var(--gold2);min-height:1.5em;margin:8px 0}.admin-note{font-size:.8rem;color:var(--muted)}.hidden{display:none!important}.login-box{max-width:430px;margin:auto}.hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:32px}.hero-card{min-height:160px}.hero-icon{font-size:4.2rem}.navlinks{display:none}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-body{padding:11px}.product h3{font-size:.96rem}.product .btn{padding:9px 7px;font-size:.84rem}.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.about-grid{grid-template-columns:1fr}.admin-grid{grid-template-columns:1fr}.admin-grid .wide{grid-column:auto}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:390px){.products{grid-template-columns:1fr}.brand{font-size:1.05rem}.logo{width:42px;height:42px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+<a class="brand" href="#"><div class="logo" id="logoMark">ب</div><div><span id="storeName">بار و بندیل</span><small id="tagline">انتخابی شیک برای استایل شما</small></div></a>
+<nav class="navlinks"><a href="#productsSection">محصولات</a><a href="#about">درباره ما</a></nav>
+<a class="btn secondary" href="#productsSection">دیدن محصولات</a>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div>
+<div class="eyebrow">بار و بندیل · انتخابی برای هر روز</div>
+<h1>استایل خودت رو با <span>انتخابی خاص</span> کامل کن</h1>
+<p id="heroText">انواع کیف و چمدان را با خیال راحت بررسی کن؛ محصول دلخواهت را انتخاب کن و برای سفارش در واتساپ پیام بده.</p>
+<div class="features"><span class="pill">👜 انواع کیف</span><span class="pill">🧳 چمدان و سفر</span><span class="pill">✨ انتخاب شیک</span></div>
+</div><div class="hero-card"><div><div class="hero-icon">👜</div><strong>بار و بندیل</strong><div style="color:var(--muted)">همراه انتخاب‌های روزمره و سفر</div></div></div></div></section>
+<section class="section" id="productsSection"><div class="wrap">
+<div class="section-head"><div><h2>محصولات فروشگاه</h2><p>محصول دلخواهت رو پیدا کن و برای سفارش پیام بده.</p></div><span class="pill" id="productCount">در حال آماده‌سازی…</span></div>
+<div class="filters"><input id="searchInput" class="field" type="search" placeholder="جست‌وجوی نام یا توضیحات محصول…"><select id="categoryFilter" class="field"><option value="">همه دسته‌بندی‌ها</option></select><select id="sortFilter" class="field"><option value="newest">جدیدترین</option><option value="price-asc">ارزان‌ترین</option><option value="price-desc">گران‌ترین</option><option value="name">نام محصول</option></select></div>
+<div id="products" class="products"><div class="notice">در حال بارگذاری محصولات…</div></div>
+</div></section>
+<section class="about" id="about"><div class="wrap"><div class="about-grid">
+<div class="about-item"><strong>👜 انتخاب متنوع</strong><p>محصولات فروشگاه را بررسی کن و گزینه مناسب خودت را پیدا کن.</p></div>
+<div class="about-item"><strong>💬 سفارش آسان</strong><p>برای هماهنگی و ثبت سفارش مستقیم در واتساپ پیام بده.</p></div>
+<div class="about-item"><strong>✨ اطلاعات به‌روز</strong><p>قیمت و موجودی نمایش‌داده‌شده بر اساس اطلاعات ثبت‌شده فروشگاه است.</p></div>
+</div></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> بار و بندیل</span><span>با عشق برای انتخاب‌های شیک 💛</span></div></footer>
+<a id="whatsappFloat" class="whatsapp-float" href="#" target="_blank" rel="noopener">واتساپ 💬</a>
+<a id="rubikaFloat" class="rubika-float" href="#" target="_blank" rel="noopener">روبیکا</a>
+<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-label="ثبت سفارش"><div class="modal-box" style="max-width:520px">
+<div class="modal-head"><h2>ثبت سفارش در سایت</h2><button class="close" id="closeOrder">بستن ×</button></div>
+<p id="orderProductSummary" style="color:var(--gold2)"></p>
+<form id="orderForm"><input type="hidden" id="orderProductId">
+<label class="label" for="orderName">نام و نام خانوادگی *</label><input class="field" id="orderName" required maxlength="100" autocomplete="name" placeholder="نام شما">
+<label class="label" for="orderPhone" style="margin-top:10px">شماره تماس *</label><input class="field" id="orderPhone" required maxlength="30" inputmode="tel" autocomplete="tel" placeholder="شماره‌ای برای هماهنگی">
+<label class="label" for="orderQty" style="margin-top:10px">تعداد *</label><input class="field" id="orderQty" type="number" min="1" value="1" required>
+<label class="label" for="orderAddress" style="margin-top:10px">آدرس یا توضیحات ارسال</label><textarea class="field" id="orderAddress" rows="3" maxlength="1000" placeholder="آدرس یا توضیح دلخواه (اختیاری)"></textarea>
+<p class="admin-note">ثبت سفارش به معنی ارسال درخواست برای فروشگاه است؛ برای تأیید نهایی با شما هماهنگ می‌شود.</p>
+<button class="btn" id="submitOrderBtn" type="submit" style="width:100%">ثبت سفارش</button><div class="status" id="orderStatus"></div>
+</form></div></div>
+<button class="admin-trigger" id="adminTrigger" aria-label="ورود مدیریت" title="ورود مدیریت">•</button>
+<div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-label="پنل مدیریت"><div class="modal-box">
+<div class="modal-head"><h2>پنل مدیریت بار و بندیل</h2><button class="close" id="closeAdmin">بستن ×</button></div>
+<div id="loginView" class="login-box">
+<p style="color:var(--muted);margin-top:0">برای مدیریت فروشگاه وارد حساب مدیر شوید.</p>
+<label class="label" for="adminEmail">ایمیل مدیر</label><input class="field" id="adminEmail" type="email" autocomplete="username" placeholder="ایمیل حساب Supabase">
+<label class="label" for="adminPassword" style="margin-top:10px">رمز عبور</label><input class="field" id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور حساب مدیر">
+<button class="btn" id="loginBtn" style="width:100%;margin-top:12px">ورود به پنل</button><div class="status" id="loginStatus"></div>
+<p class="admin-note">پنل از حساب کاربری Supabase استفاده می‌کند؛ برای ورود باید حساب مدیر از قبل ساخته شده باشد و شناسه‌اش در جدول store_admins ثبت شده باشد.</p>
+</div>
+<div id="dashboardView" class="hidden">
+<div class="admin-tabs"><button class="btn" data-tab="productsTab">محصولات</button><button class="btn ghost" data-tab="categoriesTab">دسته‌بندی‌ها</button><button class="btn ghost" data-tab="ordersTab">سفارش‌ها</button><button class="btn ghost" data-tab="settingsTab">تنظیمات فروشگاه</button><button class="btn danger" id="logoutBtn">خروج</button></div>
+<div id="productsTab" class="admin-pane">
+<h3 id="productFormTitle">افزودن محصول</h3>
+<input id="editProductId" type="hidden">
+<div class="admin-grid">
+<div><label class="label" for="pName">نام محصول *</label><input class="field" id="pName" placeholder="مثلاً کیف دوشی"></div>
+<div><label class="label" for="pPrice">قیمت (تومان) *</label><input class="field" id="pPrice" type="number" min="0" step="1000" placeholder="مثلاً 850000"></div>
+<div><label class="label" for="pStock">تعداد موجودی</label><input class="field" id="pStock" type="number" min="0" step="1" value="1"></div>
+<div><label class="label" for="pCategory">دسته‌بندی</label><select class="field" id="pCategory"></select></div>
+<div class="wide"><label class="label" for="pDescription">توضیحات</label><textarea class="field" id="pDescription" rows="3" placeholder="توضیحات محصول…"></textarea></div>
+<div class="wide"><label class="label" for="pImage">عکس محصول (از گالری گوشی)</label><input class="field" id="pImage" type="file" accept="image/*" capture="environment"><div class="admin-note">عکس در فضای ذخیره‌سازی Supabase بارگذاری می‌شود. برای جایگزینی عکس، عکس جدید انتخاب کن.</div></div>
+<div class="wide" style="display:flex;align-items:center;gap:9px"><input id="pAvailable" type="checkbox" checked style="width:18px;height:18px"><label for="pAvailable">نمایش محصول در فروشگاه</label></div>
+<div class="wide" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="saveProductBtn">ذخیره محصول</button><button class="btn ghost" id="cancelEditBtn">پاک‌کردن فرم</button></div>
+</div><div class="status" id="productStatus"></div><hr class="hr"><h3>محصولات ثبت‌شده</h3><div id="adminProducts" class="admin-list">در حال بارگذاری…</div>
+</div>
+<div id="categoriesTab" class="admin-pane hidden"><h3>مدیریت دسته‌بندی‌ها</h3><div style="display:flex;gap:8px;flex-wrap:wrap"><input class="field" id="newCategoryName" placeholder="نام دسته‌بندی جدید" style="flex:1;min-width:180px"><button class="btn" id="addCategoryBtn">افزودن دسته</button></div><div class="status" id="categoryStatus"></div><div id="adminCategories" class="admin-list"></div><p class="admin-note">اگر دسته‌ای به محصول متصل باشد، ممکن است حذف آن توسط پایگاه داده محدود شود؛ ابتدا محصولات مربوطه را ویرایش کن.</p></div>
+<div id="ordersTab" class="admin-pane hidden"><h3>سفارش‌های ثبت‌شده</h3><p class="admin-note">درخواست‌های ثبت‌شده از فرم سایت اینجا نمایش داده می‌شوند. برای این بخش باید جدول orders و سیاست‌های SQL انتهای فایل را یک بار در Supabase اجرا کنی.</p><button class="btn secondary" id="refreshOrdersBtn">بروزرسانی سفارش‌ها</button><div class="status" id="ordersStatus"></div><div id="adminOrders" class="admin-list">هنوز بارگذاری نشده.</div></div>
+<div id="settingsTab" class="admin-pane hidden"><h3>تنظیمات فروشگاه</h3><div class="admin-grid">
+<div><label class="label" for="sName">نام فروشگاه</label><input class="field" id="sName"></div>
+<div><label class="label" for="sTagline">شعار فروشگاه</label><input class="field" id="sTagline"></div>
+<div><label class="label" for="sWhatsapp">شماره واتساپ با کد کشور</label><input class="field" id="sWhatsapp" inputmode="tel" placeholder="مثلاً 98912xxxxxxx"></div>
+<div><label class="label" for="sRubika">لینک یا آیدی روبیکا</label><input class="field" id="sRubika" placeholder="مثلاً https://rubika.ir/YourID"></div>
+<div class="wide"><label class="label" for="sHero">متن معرفی صفحه اصلی</label><textarea class="field" id="sHero" rows="3"></textarea></div>
+<div class="wide"><label class="label" for="sLogo">تصویر لوگو (اختیاری)</label><input class="field" id="sLogo" type="file" accept="image/*"></div>
+<div class="wide"><button class="btn" id="saveSettingsBtn">ذخیره تنظیمات</button></div>
+</div><div class="status" id="settingsStatus"></div><hr class="hr"><h3>تغییر رمز حساب مدیر</h3><div class="admin-grid"><div class="wide"><label class="label" for="newAdminPassword">رمز جدید (حداقل ۶ کاراکتر)</label><input class="field" id="newAdminPassword" type="password" autocomplete="new-password"></div><div class="wide"><button class="btn secondary" id="changePasswordBtn">تغییر رمز ورود</button></div></div><div class="status" id="passwordStatus"></div></div>
+</div>
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* تنظیمات اتصال پروژه Supabase شما */
+const SUPABASE_URL = 'https://ntoductfjjupokxlxfvp.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_7dgmNOM94sj3okx5xAb9dA_xZ43tQA5';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const $ = id => document.getElementById(id);
+const state = {products:[], categories:[], settings:{store_name:'بار و بندیل',tagline:'انتخابی شیک برای استایل شما',whatsapp:'',rubika:'',hero_text:'انواع کیف و چمدان را با خیال راحت بررسی کن؛ محصول دلخواهت را انتخاب کن و برای سفارش در واتساپ پیام بده.',logo_url:''}, user:null};
+const money = value => new Intl.NumberFormat('fa-IR').format(Number(value)||0) + ' تومان';
+const safe = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const slug = value => String(value).toLowerCase().replace(/[^a-z0-9\u0600-\u06ff]+/g,'-').replace(/^-|-$/g,'');
+function setStatus(id, text, error=false){$(id).textContent=text;$(id).style.color=error?'var(--danger)':'var(--gold2)'}
+function normalizeProduct(p){return {...p,price:Number(p.price)||0,stock:Number(p.stock)||0,is_available:p.is_available!==false};}
+function getWhatsAppUrl(product){
+ let phone=(state.settings.whatsapp||'').replace(/[^\d]/g,'');
+ if(phone.startsWith('0')) phone='98'+phone.slice(1);
+ const message=product ? `سلام، برای سفارش این محصول از بار و بندیل پیام می‌دم:\n${product.name}\nقیمت: ${money(product.price)}\nلطفاً راهنمایی کنید.` : 'سلام، برای راهنمایی و سفارش از بار و بندیل پیام می‌دم.';
+ return phone ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}` : `https://wa.me/?text=${encodeURIComponent(message)}`;
+}
+function applySettings(){
+ $('storeName').textContent=state.settings.store_name||'بار و بندیل';
+ $('tagline').textContent=state.settings.tagline||'انتخابی شیک برای استایل شما';
+ $('heroText').textContent=state.settings.hero_text||'انواع کیف و چمدان را با خیال راحت بررسی کن؛ محصول دلخواهت را انتخاب کن و برای سفارش در واتساپ پیام بده.';
+ $('whatsappFloat').href=getWhatsAppUrl();
+ const rubika=(state.settings.rubika||'').trim();
+ $('rubikaFloat').href=rubika ? (rubika.startsWith('http')?rubika:'https://rubika.ir/'+rubika.replace(/^@/,'')) : 'https://rubika.ir/';
+ $('rubikaFloat').style.display=rubika?'inline-flex':'none';
+ if(state.settings.logo_url){$('logoMark').innerHTML=`<img src="${safe(state.settings.logo_url)}" alt="لوگو" style="width:100%;height:100%;object-fit:contain;border-radius:14px">`;}
+ else $('logoMark').textContent='ب';
+}
+async function loadSettings(){
+ try{
+  const {data,error}=await supabaseClient.from('store_settings').select('key,value');
+  if(error) throw error;
+  (data||[]).forEach(row=>{if(row.key==='store_name')state.settings.store_name=row.value;if(row.key==='tagline')state.settings.tagline=row.value;if(row.key==='whatsapp')state.settings.whatsapp=row.value;if(row.key==='rubika')state.settings.rubika=row.value;if(row.key==='hero_text')state.settings.hero_text=row.value;if(row.key==='logo_url')state.settings.logo_url=row.value;});
+ }catch(e){console.warn('Settings load:',e.message)}
+ applySettings();
+}
+async function loadCategories(){
+ try{const {data,error}=await supabaseClient.from('categories').select('*').order('name');if(error)throw error;state.categories=data||[];}
+ catch(e){console.warn('Categories load:',e.message);state.categories=[];}
+ renderCategoryOptions();renderAdminCategories();
+}
+async function loadProducts(){
+ $('products').innerHTML='<div class="notice">در حال بارگذاری محصولات…</div>';
+ try{
+  const {data,error}=await supabaseClient.from('products').select('*').order('created_at',{ascending:false});
+  if(error)throw error;
+  state.products=(data||[]).map(normalizeProduct);
+  renderProducts();renderAdminProducts();
+ }catch(e){
+  $('products').innerHTML='<div class="notice">بارگذاری محصولات انجام نشد. اتصال و دسترسی خواندن جدول products را در Supabase بررسی کن.</div>';
+  $('productCount').textContent='خطا در دریافت محصولات';
+  console.error(e);
+ }
+}
+function renderCategoryOptions(){
+ const current=$('categoryFilter').value;
+ $('categoryFilter').innerHTML='<option value="">همه دسته‌بندی‌ها</option>'+state.categories.map(c=>`<option value="${safe(c.id)}">${safe(c.name)}</option>`).join('');
+ if([...$('categoryFilter').options].some(o=>o.value===current))$('categoryFilter').value=current;
+ $('pCategory').innerHTML='<option value="">بدون دسته‌بندی</option>'+state.categories.map(c=>`<option value="${safe(c.id)}">${safe(c.name)}</option>`).join('');
+}
+function renderProducts(){
+ const query=$('searchInput').value.trim().toLocaleLowerCase('fa');
+ const category=$('categoryFilter').value;const sort=$('sortFilter').value;
+ let list=state.products.filter(p=>p.is_available && (!category||String(p.category_id||'')===category) && (`${p.name||''} ${p.description||''}`.toLocaleLowerCase('fa').includes(query)));
+ if(sort==='price-asc')list.sort((a,b)=>a.price-b.price);
+ if(sort==='price-desc')list.sort((a,b)=>b.price-a.price);
+ if(sort==='name')list.sort((a,b)=>(a.name||'').localeCompare(b.name||'','fa'));
+ $('productCount').textContent=`${new Intl.NumberFormat('fa-IR').format(list.length)} محصول`;
+ if(!list.length){$('products').innerHTML='<div class="empty">محصولی پیدا نشد. بعداً دوباره سر بزن 💛</div>';return;}
+ $('products').innerHTML=list.map(p=>{
+  const image=p.image_url?`<img class="product-img" src="${safe(p.image_url)}" alt="${safe(p.name)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;no-image&quot;>👜</div>'">`:'<div class="no-image">👜</div>';
+  const categoryName=state.categories.find(c=>String(c.id)===String(p.category_id))?.name;
+  const stock=p.stock>0?`<span class="stock">موجود</span>`:'<span class="stock out">ناموجود</span>';
+  return `<article class="product">${image}<div class="product-body"><h3>${safe(p.name)}</h3>${categoryName?`<span class="pill" style="align-self:flex-start">${safe(categoryName)}</span>`:''}<div class="desc">${safe(p.description||'')}</div><div class="product-bottom"><span class="price">${money(p.price)}</span>${stock}</div><a class="btn secondary" style="width:100%;margin-top:8px" href="${p.stock>0?safe(getWhatsAppUrl(p)):'#'}" ${p.stock>0?'target="_blank" rel="noopener"':'aria-disabled="true"'}>${p.stock>0?'سفارش در واتساپ':'فعلاً ناموجود'}</a><button class="btn site-order-btn" style="width:100%;margin-top:7px" data-order="${safe(p.id)}" ${p.stock>0?'':'disabled'}>ثبت سفارش در سایت</button></div></article>`;
+ }).join('');
+}
+function renderAdminProducts(){
+ if(!state.products.length){$('adminProducts').innerHTML='<div class="notice">هنوز محصولی ثبت نشده.</div>';return;}
+ $('adminProducts').innerHTML=state.products.map(p=>`<div class="admin-row"><div><strong>${safe(p.name)}</strong><small>${money(p.price)} · موجودی: ${safe(p.stock)} · ${p.is_available?'نمایش در سایت':'مخفی'}</small></div><div class="row-actions"><button class="btn ghost" data-edit="${safe(p.id)}">ویرایش</button><button class="btn danger" data-delete="${safe(p.id)}">حذف</button></div></div>`).join('');
+}
+function renderAdminCategories(){
+ if(!$('adminCategories'))return;
+ $('adminCategories').innerHTML=state.categories.length?state.categories.map(c=>`<div class="admin-row"><strong>${safe(c.name)}</strong><div class="row-actions"><button class="btn danger" data-del-category="${safe(c.id)}">حذف</button></div></div>`).join(''):'<div class="notice">هنوز دسته‌بندی ثبت نشده.</div>';
+}
+async function uploadImage(file,folder='products'){
+ if(!file)return null;
+ if(!file.type.startsWith('image/'))throw new Error('لطفاً فایل تصویری انتخاب کن.');
+ if(file.size>50*1024*1024)throw new Error('حجم عکس بیشتر از ۵۰ مگابایت است.');
+ const ext=(file.name.split('.').pop()||'jpg').replace(/[^a-zA-Z0-9]/g,'')||'jpg';
+ const path=`${folder}/${Date.now()}-${Math.random().toString(36).slice(2,9)}.${ext}`;
+ const {error}=await supabaseClient.storage.from('product-images').upload(path,file,{upsert:false,contentType:file.type});
+ if(error)throw error;
+ const {data}=supabaseClient.storage.from('product-images').getPublicUrl(path);
+ return data.publicUrl;
+}
+function clearProductForm(){
+ $('editProductId').value='';$('pName').value='';$('pPrice').value='';$('pStock').value='1';$('pCategory').value='';$('pDescription').value='';$('pImage').value='';$('pAvailable').checked=true;$('productFormTitle').textContent='افزودن محصول';$('saveProductBtn').textContent='ذخیره محصول';setStatus('productStatus','');
+}
+async function saveProduct(){
+ const id=$('editProductId').value;const name=$('pName').value.trim();const price=$('pPrice').value;
+ if(!name||price===''){setStatus('productStatus','نام و قیمت محصول را وارد کن.',true);return;}
+ if(Number(price)<0||Number($('pStock').value)<0){setStatus('productStatus','قیمت و موجودی نمی‌تواند منفی باشد.',true);return;}
+ $('saveProductBtn').disabled=true;setStatus('productStatus','در حال ذخیره…');
+ try{
+  const old=state.products.find(p=>String(p.id)===String(id));
+  let image_url=old?.image_url||null;
+  const file=$('pImage').files[0];if(file)image_url=await uploadImage(file);
+  const payload={name,price:Number(price),stock:Number($('pStock').value||0),category_id:$('pCategory').value?Number($('pCategory').value):null,description:$('pDescription').value.trim(),image_url,is_available:$('pAvailable').checked};
+  let result;
+  if(id)result=await supabaseClient.from('products').update(payload).eq('id',id);
+  else result=await supabaseClient.from('products').insert(payload);
+  if(result.error)throw result.error;
+  setStatus('productStatus','محصول با موفقیت ذخیره شد.');clearProductForm();await loadProducts();
+ }catch(e){setStatus('productStatus','خطا: '+(e.message||'ذخیره انجام نشد'),true);console.error(e)}
+ finally{$('saveProductBtn').disabled=false;}
+}
+function fillProductForm(id){
+ const p=state.products.find(x=>String(x.id)===String(id));if(!p)return;
+ $('editProductId').value=p.id;$('pName').value=p.name||'';$('pPrice').value=p.price;$('pStock').value=p.stock;$('pCategory').value=p.category_id||'';$('pDescription').value=p.description||'';$('pAvailable').checked=p.is_available;$('pImage').value='';$('productFormTitle').textContent='ویرایش محصول';$('saveProductBtn').textContent='ذخیره تغییرات';window.scrollTo({top:$('adminModal').scrollTop,behavior:'smooth'});
+}
+async function deleteProduct(id){
+ if(!confirm('این محصول حذف شود؟'))return;
+ try{const {error}=await supabaseClient.from('products').delete().eq('id',id);if(error)throw error;await loadProducts();setStatus('productStatus','محصول حذف شد.');}
+ catch(e){setStatus('productStatus','خطا در حذف: '+e.message,true)}
+}
+async function addCategory(){
+ const name=$('newCategoryName').value.trim();if(!name){setStatus('categoryStatus','نام دسته‌بندی را وارد کن.',true);return}
+ try{const {error}=await supabaseClient.from('categories').insert({name});if(error)throw error;$('newCategoryName').value='';setStatus('categoryStatus','دسته‌بندی اضافه شد.');await loadCategories();}
+ catch(e){setStatus('categoryStatus','خطا: '+e.message,true)}
+}
+async function deleteCategory(id){
+ if(!confirm('دسته‌بندی حذف شود؟'))return;
+ try{const {error}=await supabaseClient.from('categories').delete().eq('id',id);if(error)throw error;await loadCategories();setStatus('categoryStatus','دسته‌بندی حذف شد.');}
+ catch(e){setStatus('categoryStatus','حذف نشد؛ ممکن است هنوز به محصولی متصل باشد. '+e.message,true)}
+}
+async function saveSettings(){
+ const entries={store_name:$('sName').value.trim()||'بار و بندیل',tagline:$('sTagline').value.trim(),whatsapp:$('sWhatsapp').value.trim(),rubika:$('sRubika').value.trim(),hero_text:$('sHero').value.trim()};
+ $('saveSettingsBtn').disabled=true;setStatus('settingsStatus','در حال ذخیره…');
+ try{
+  const logoFile=$('sLogo').files[0];if(logoFile)entries.logo_url=await uploadImage(logoFile,'settings');
+  for(const [key,value] of Object.entries(entries)){
+   const {error}=await supabaseClient.from('store_settings').upsert({key,value,updated_at:new Date().toISOString()},{onConflict:'key'});if(error)throw error;
+  }
+  state.settings={...state.settings,...entries};applySettings();setStatus('settingsStatus','تنظیمات ذخیره شد.');
+ }catch(e){setStatus('settingsStatus','خطا: '+e.message,true);console.error(e)}
+ finally{$('saveSettingsBtn').disabled=false;}
+}
+async function openDashboard(){
+ const {data:{session}}=await supabaseClient.auth.getSession();
+ if(!session){$('loginView').classList.remove('hidden');$('dashboardView').classList.add('hidden');return}
+ const {data:admin,error}=await supabaseClient.from('store_admins').select('user_id').eq('user_id',session.user.id).maybeSingle();
+ if(error||!admin){await supabaseClient.auth.signOut();$('loginView').classList.remove('hidden');$('dashboardView').classList.add('hidden');setStatus('loginStatus','این حساب در جدول store_admins دسترسی مدیریت ندارد.',true);return}
+ state.user=session.user;$('loginView').classList.add('hidden');$('dashboardView').classList.remove('hidden');
+ $('sName').value=state.settings.store_name||'';$('sTagline').value=state.settings.tagline||'';$('sWhatsapp').value=state.settings.whatsapp||'';$('sRubika').value=state.settings.rubika||'';$('sHero').value=state.settings.hero_text||'';
+ await loadCategories();await loadProducts();await loadAdminOrders();
+}
+
+function openOrderForm(id){
+ const p=state.products.find(x=>String(x.id)===String(id));
+ if(!p||p.stock<1)return;
+ $('orderProductId').value=p.id;$('orderQty').value='1';$('orderQty').max=String(p.stock);$('orderName').value='';$('orderPhone').value='';$('orderAddress').value='';
+ $('orderProductSummary').textContent=`${p.name} — ${money(p.price)} · موجودی: ${p.stock}`;
+ setStatus('orderStatus','');$('orderModal').classList.add('open');
+}
+$('products').addEventListener('click',e=>{const btn=e.target.closest('[data-order]');if(btn)openOrderForm(btn.dataset.order)});
+$('closeOrder').addEventListener('click',()=>$('orderModal').classList.remove('open'));
+$('orderModal').addEventListener('click',e=>{if(e.target===$('orderModal'))$('orderModal').classList.remove('open')});
+$('orderForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const p=state.products.find(x=>String(x.id)===String($('orderProductId').value));
+ if(!p){setStatus('orderStatus','این محصول پیدا نشد؛ صفحه را تازه‌سازی کن.',true);return}
+ const qty=Number($('orderQty').value);
+ if(!Number.isInteger(qty)||qty<1||qty>p.stock){setStatus('orderStatus','تعداد واردشده با موجودی محصول هماهنگ نیست.',true);return}
+ const payload={customer_name:$('orderName').value.trim(),customer_phone:$('orderPhone').value.trim(),delivery_address:$('orderAddress').value.trim(),product_id:p.id,product_name:p.name,quantity:qty,unit_price:p.price,total_price:p.price*qty,status:'new'};
+ $('submitOrderBtn').disabled=true;setStatus('orderStatus','در حال ثبت سفارش…');
+ try{
+  const {error}=await supabaseClient.from('orders').insert(payload);
+  if(error)throw error;
+  setStatus('orderStatus','سفارش ثبت شد! فروشگاه برای هماهنگی با شما تماس می‌گیرد.');
+  $('orderForm').reset();
+  setTimeout(()=>$('orderModal').classList.remove('open'),2200);
+ }catch(err){
+  console.error(err);
+  setStatus('orderStatus','ثبت سفارش انجام نشد. ممکن است جدول orders هنوز در Supabase ساخته نشده باشد؛ راهنما در پایین فایل است.',true);
+ }finally{$('submitOrderBtn').disabled=false}
+});
+async function loadAdminOrders(){
+ $('adminOrders').innerHTML='<div class="notice">در حال دریافت سفارش‌ها…</div>';
+ try{
+  const {data,error}=await supabaseClient.from('orders').select('*').order('created_at',{ascending:false}).limit(100);
+  if(error)throw error;
+  if(!data||!data.length){$('adminOrders').innerHTML='<div class="notice">هنوز سفارشی ثبت نشده.</div>';return}
+  $('adminOrders').innerHTML=data.map(o=>`<div class="admin-row" style="align-items:flex-start"><div><strong>${safe(o.product_name)} × ${safe(o.quantity)}</strong><small>نام: ${safe(o.customer_name)} · تماس: ${safe(o.customer_phone)}</small><small>مبلغ: ${money(o.total_price)} · تاریخ: ${safe(o.created_at?new Date(o.created_at).toLocaleString('fa-IR'):'')}</small><small>آدرس/توضیحات: ${safe(o.delivery_address||'—')}</small><small>وضعیت: ${safe(o.status||'new')}</small></div><div class="row-actions"><button class="btn ghost" data-order-status="${safe(o.id)}">تکمیل شد</button></div></div>`).join('');
+ }catch(err){$('adminOrders').innerHTML='<div class="notice">سفارش‌ها بارگذاری نشدند. جدول orders و سیاست‌های SQL را بررسی کن.</div>';setStatus('ordersStatus',err.message,true)}
+}
+$('refreshOrdersBtn').addEventListener('click',loadAdminOrders);
+$('adminOrders').addEventListener('click',async e=>{
+ const btn=e.target.closest('[data-order-status]');if(!btn)return;
+ try{const {error}=await supabaseClient.from('orders').update({status:'completed'}).eq('id',btn.dataset.orderStatus);if(error)throw error;setStatus('ordersStatus','وضعیت سفارش به تکمیل‌شده تغییر کرد.');await loadAdminOrders();}
+ catch(err){setStatus('ordersStatus','خطا در تغییر وضعیت: '+err.message,true)}
+});
+
+$('year').textContent=new Date().getFullYear();
+$('searchInput').addEventListener('input',renderProducts);$('categoryFilter').addEventListener('change',renderProducts);$('sortFilter').addEventListener('change',renderProducts);
+$('adminTrigger').addEventListener('click',async()=>{$('adminModal').classList.add('open');setStatus('loginStatus','');await openDashboard()});
+$('closeAdmin').addEventListener('click',()=>$('adminModal').classList.remove('open'));
+$('adminModal').addEventListener('click',e=>{if(e.target===$('adminModal'))$('adminModal').classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('adminModal').classList.remove('open')});
+$('loginBtn').addEventListener('click',async()=>{
+ const email=$('adminEmail').value.trim(),password=$('adminPassword').value;
+ if(!email||!password){setStatus('loginStatus','ایمیل و رمز عبور را وارد کن.',true);return}
+ $('loginBtn').disabled=true;setStatus('loginStatus','در حال ورود…');
+ try{const {error}=await supabaseClient.auth.signInWithPassword({email,password});if(error)throw error;await openDashboard();if(!$('dashboardView').classList.contains('hidden'))setStatus('loginStatus','');}
+ catch(e){setStatus('loginStatus','ورود ناموفق بود: '+e.message,true)}
+ finally{$('loginBtn').disabled=false}
+});
+$('logoutBtn').addEventListener('click',async()=>{await supabaseClient.auth.signOut();state.user=null;$('dashboardView').classList.add('hidden');$('loginView').classList.remove('hidden');$('adminPassword').value='';setStatus('loginStatus','از پنل خارج شدی.')});
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('ghost',b!==btn);});
+ document.querySelectorAll('.admin-pane').forEach(p=>p.classList.add('hidden'));$(btn.dataset.tab).classList.remove('hidden');
+}));
+$('saveProductBtn').addEventListener('click',saveProduct);$('cancelEditBtn').addEventListener('click',clearProductForm);
+$('adminProducts').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]');const del=e.target.closest('[data-delete]');if(edit)fillProductForm(edit.dataset.edit);if(del)deleteProduct(del.dataset.delete)});
+$('addCategoryBtn').addEventListener('click',addCategory);
+$('adminCategories').addEventListener('click',e=>{const btn=e.target.closest('[data-del-category]');if(btn)deleteCategory(btn.dataset.delCategory)});
+$('saveSettingsBtn').addEventListener('click',saveSettings);
+$('changePasswordBtn').addEventListener('click',async()=>{
+ const password=$('newAdminPassword').value;if(password.length<6){setStatus('passwordStatus','رمز جدید باید حداقل ۶ کاراکتر باشد.',true);return}
+ try{const {error}=await supabaseClient.auth.updateUser({password});if(error)throw error;$('newAdminPassword').value='';setStatus('passwordStatus','رمز ورود با موفقیت تغییر کرد.')}
+ catch(e){setStatus('passwordStatus','خطا: '+e.message,true)}
+});
+supabaseClient.auth.onAuthStateChange((_event,session)=>{state.user=session?.user||null});
+(async()=>{await loadSettings();await loadCategories();await loadProducts();})();
+</script>
+
+<!--
+تنظیم یک‌باره سفارش‌های سایت در Supabase:
+در SQL Editor این دستورها را اجرا کنید (اگر جدول orders از قبل دارید، قبل از اجرا ساختار را بررسی کنید).
+
+create table if not exists public.orders (
+  id bigint generated by default as identity primary key,
+  customer_name text not null,
+  customer_phone text not null,
+  delivery_address text not null default '',
+  product_id bigint,
+  product_name text not null,
+  quantity integer not null check (quantity > 0),
+  unit_price numeric not null check (unit_price >= 0),
+  total_price numeric not null check (total_price >= 0),
+  status text not null default 'new',
+  created_at timestamptz not null default now()
+);
+alter table public.orders enable row level security;
+drop policy if exists "Public can create orders" on public.orders;
+create policy "Public can create orders" on public.orders for insert to anon, authenticated with check (true);
+drop policy if exists "Admins can read orders" on public.orders;
+create policy "Admins can read orders" on public.orders for select to authenticated
+using (exists (select 1 from public.store_admins sa where sa.user_id = auth.uid()));
+drop policy if exists "Admins can update orders" on public.orders;
+create policy "Admins can update orders" on public.orders for update to authenticated
+using (exists (select 1 from public.store_admins sa where sa.user_id = auth.uid()))
+with check (exists (select 1 from public.store_admins sa where sa.user_id = auth.uid()));
+-->
+
+</body>
+</html>
